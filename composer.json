@@ -20,7 +20,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
-        "stripe/stripe-php": "^10.1"
+        "stripe/stripe-php": "^10.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

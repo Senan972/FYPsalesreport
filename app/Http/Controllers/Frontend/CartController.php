@@ -14,7 +14,6 @@ use App\Models\ShipDivision;
 use App\Models\Coupon;
 use Illuminate\Support\Facades\Session;
 
-
 class CartController extends Controller
 {
     public function AddToCart(Request $request, $id){
@@ -77,7 +76,7 @@ class CartController extends Controller
     } // end method 
 
 
-/// remove mini cart 
+    /// remove mini cart 
     public function RemoveMiniCart($rowId){
     	Cart::remove($rowId);
     	return response()->json(['success' => 'Product Remove from Cart']);
@@ -203,9 +202,5 @@ class CartController extends Controller
         return redirect()->route('login')->with($notification);
 
         }
-
-    } // end method 
-
-
-
+    }//end method
 }

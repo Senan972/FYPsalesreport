@@ -113,7 +113,7 @@ My Checkout
 		 <div class="form-group">
 	<h5><b>State Select</b> <span class="text-danger">*</span></h5>
 	<div class="controls">
-		<select name="state_id" class="form-control">
+		<select name="state_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select State</option>
 			 
 		</select>
