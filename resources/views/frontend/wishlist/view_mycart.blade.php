@@ -42,9 +42,6 @@ My Cart Page
 </div>		
 
 
-<div class="col-md-4 col-sm-12 estimate-ship-tax">
-
-</div>
 
 
 <div class="col-md-4 col-sm-12 estimate-ship-tax">
