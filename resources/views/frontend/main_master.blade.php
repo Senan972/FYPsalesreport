@@ -196,7 +196,7 @@ function productView(id){
             $('#pcode').text(data.product.product_code);
             $('#pcategory').text(data.product.category.category_name_en);
             $('#pbrand').text(data.product.brand.brand_name_en);
-            $('#pimage').attr('src','/'+data.product.product_thambnail);
+            $('#pimage').attr('src','/'+data.product.product_thumbnail);
             $('#product_id').val(id);
             $('#qty').val(1);
             // Product Price 
@@ -404,7 +404,7 @@ function addToWishList(product_id){
                 var rows = ""
                 $.each(response, function(key,value){
                     rows += `<tr>
-                    <td class="col-md-2"><img src="/${value.product.product_thambnail} " alt="imga"></td>
+                    <td class="col-md-2"><img src="/${value.product.product_thumbnail} " alt="imga"></td>
                     <td class="col-md-7">
                         <div class="product-name"><a href="#">${value.product.product_name_en}</a></div>
                          
