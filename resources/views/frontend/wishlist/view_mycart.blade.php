@@ -10,8 +10,8 @@ My Cart Page
 	<div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
-				<li><a href="{{ url('/') }}">Home</a></li>
-				<li class='active'>My Cart</li>
+				<li><a href="home.html">Home</a></li>
+				<li class='active'>MyCart</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
@@ -42,6 +42,9 @@ My Cart Page
 </div>		
 
 
+<div class="col-md-4 col-sm-12 estimate-ship-tax">
+
+</div>
 
 
 <div class="col-md-4 col-sm-12 estimate-ship-tax">
