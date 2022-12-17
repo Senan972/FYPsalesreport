@@ -10,8 +10,8 @@ My Cart Page
 	<div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
-				<li><a href="home.html">Home</a></li>
-				<li class='active'>MyCart</li>
+				<li><a href="{{ url('/') }}">Home</a></li>
+				<li class='active'>My Cart</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
@@ -28,7 +28,6 @@ My Cart Page
 				<tr>
 					<th class="cart-romove item">Image</th>
 					<th class="cart-description item">Name</th>
-					<th class="cart-product-name item">Color</th>
 					<th class="cart-edit item">Size</th>
 					<th class="cart-qty item">Quantity</th>
 					<th class="cart-sub-total item">Subtotal</th>
