@@ -172,9 +172,6 @@ My Checkout
 						<strong>Qty: </strong>
 						 ( {{ $item->qty }} )
 
-						 <strong>Color: </strong>
-						 {{ $item->options->color }}
-
 						 <strong>Size: </strong>
 						 {{ $item->options->size }}
 					</li>

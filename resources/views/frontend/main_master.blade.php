@@ -118,8 +118,8 @@
         <div class="col-md-4">
 
      <ul class="list-group">
-  <li class="list-group-item">Product Price: <strong class="text-danger">$<span id="pprice"></span></strong>
-<del id="oldprice">$</del>
+  <li class="list-group-item">Product Price: <strong class="text-danger">Rs. <span id="pprice"></span></strong>
+<del id="oldprice">Rs. </del>
    </li>
   <li class="list-group-item">Product Code: <strong id="pcode"></strong></li>
   <li class="list-group-item">Category: <strong id="pcategory"></strong></li>
@@ -133,15 +133,9 @@
         </div><!-- // end col md -->
 
 
-        <div class="col-md-4">
+    <div class="col-md-4">
 
-            <div class="form-group">
-    <label for="color">Choose Color</label>
-    <select class="form-control" id="color" name="color">
-      
-      
-    </select>
-  </div>  <!-- // end form group -->
+        
 
 
     <div class="form-group" id="sizeArea">
