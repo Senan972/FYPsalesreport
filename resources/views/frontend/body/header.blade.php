@@ -26,13 +26,7 @@
         
         <div class="cnt-block">
           <ul class="list-unstyled list-inline">
-            <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">PKR </span><b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">PKR</a></li>
-                <li><a href="#">USD</a></li>
-                <li><a href="#">GBP</a></li>
-              </ul>
-            </li>
+            
             <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">
               @if(session()->get('language') == 'urdu') زبان @else Language @endif  
             </span><b class="caret"></b></a>
