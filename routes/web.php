@@ -34,36 +34,28 @@ use App\Models\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 	Route::get('/login', [AdminController::class, 'loginForm']);
 	Route::post('/login',[AdminController::class, 'store'])->name('admin.login');
 });
 
-
-Route::middleware(['auth:admin'])->group(function(){
-
-
+//restricted urls
+Route::middleware(['auth:admin']) -> group(function(){
 
 Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
     return view('admin.index');
-})->name('dashboard')->middleware('auth:admin');
+})->name('dashboard') -> middleware('auth:admin');
 
-// Admin All Routes 
+//Routes for Admin
+Route::get('/admin/logout', [AdminController::class, 'destroy']) -> name('admin.logout');
+Route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile']) -> name('admin.profile');
+Route::get('/admin/profile/edit', [AdminProfileController::class, 'AdminProfileEdit']) -> name('admin.profile.edit');
+Route::post('/admin/profile/store', [AdminProfileController::class, 'AdminProfileStore']) -> name('admin.profile.store');
 
-Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+Route::get('/admin/change/password', [AdminProfileController::class, 'AdminChangePassword']) -> name('admin.change.password');
+Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword']) -> name('update.change.password');
 
-Route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile'])->name('admin.profile');
-
-Route::get('/admin/profile/edit', [AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
-
-Route::post('/admin/profile/store', [AdminProfileController::class, 'AdminProfileStore'])->name('admin.profile.store');
-
-Route::get('/admin/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
-
-Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password');
-
-});  // end Middleware admin
+});
 
 // User ALL Routes
 

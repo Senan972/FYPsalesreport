@@ -57,7 +57,8 @@
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
           
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="{{ url('/') }}"> <h2 style="color: azure;">HealthMart</h2></a> </div>
+          
+          <div class="logo"> <a href="/"> <img style="height: 44px" src="{{ asset('frontend/assets/images/logo6.png') }}" alt="logo"> </a> </div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
