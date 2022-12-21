@@ -156,7 +156,7 @@ $route = Route::current() -> getName();
 </li>        
 
 	
-          </ul>
+        
         </li>      
 
         <li class="header nav-small-cap">User Interface</li>
