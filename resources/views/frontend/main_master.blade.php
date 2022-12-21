@@ -119,10 +119,10 @@
               
             </div>
             <div class="col-md-4">
-              <div class="form-group" id="sizeArea">
-                <label for="size">Choose Size</label>
-                <select class="form-control" id="size" name="size">
-                  <option>1</option>
+                <div class="form-group" id="sizeArea">
+                    <label for="size">Choose Size</label>
+                    <select class="form-control" id="size" name="size">
+                      <option>1</option>
                   
                 </select>
               </div>
@@ -187,16 +187,16 @@ function productView(id){
                 $('#stockout').text('Out of stock');
             } // end Stock Option 
 
-        //size
-        $('select[name="size"]').empty();        
-        $.each(data.size,function(key,value){
-            $('select[name="size"]').append('<option value=" '+value+' ">'+value+' </option>')
-            if (data.size == "") {
-                $('#sizeArea').hide();
-            }else{
-                $('#sizeArea').show();
-            }
-        })
+        // Size
+    $('select[name="size"]').empty();        
+    $.each(data.size,function(key,value){
+        $('select[name="size"]').append('<option value=" '+value+' ">'+value+' </option>')
+        if (data.size == "") {
+            $('#sizeArea').hide();
+        }else{
+            $('#sizeArea').show();
+        }
+    })
         }
     })
  
@@ -310,12 +310,11 @@ function miniCartRemove(rowId){
                     title: data.error
                 })
             }
-            // End Message 
+           // End Message 
         }
-    });
-}
-
-
+        });
+    }
+ //  end mini cart remove 
 </script>
 
 <!--  /// Start Add Wishlist Page  //// -->
@@ -394,7 +393,40 @@ function addToWishList(product_id){
         })
      }
  wishlist();
-   
+   ///  Wishlist remove Start 
+function wishlistRemove(id){
+     $.ajax({
+         type: 'GET',
+         url: '/user/wishlist-remove/'+id,
+         dataType:'json',
+         success:function(data){
+         wishlist();
+          // Start Message 
+             const Toast = Swal.mixin({
+                   toast: true,
+                   position: 'top-end',
+                   
+                   showConfirmButton: false,
+                   timer: 3000
+                 })
+             if ($.isEmptyObject(data.error)) {
+                 Toast.fire({
+                     type: 'success',
+                     icon: 'success',
+                     title: data.success
+                 })
+             }else{
+                 Toast.fire({
+                     type: 'error',
+                     icon: 'error',
+                     title: data.error
+                 })
+             }
+             // End Message 
+         }
+     });
+ }
+// End Wishlist remove 
 
 </script> 
 <!-- /// Load My Cart /// -->
@@ -449,40 +481,7 @@ function addToWishList(product_id){
       })
     }
   cart();
- ///  Wishlist remove Start 
-function wishlistRemove(id){
-     $.ajax({
-         type: 'GET',
-         url: '/user/wishlist-remove/'+id,
-         dataType:'json',
-         success:function(data){
-         wishlist();
-          // Start Message 
-             const Toast = Swal.mixin({
-                   toast: true,
-                   position: 'top-end',
-                   
-                   showConfirmButton: false,
-                   timer: 3000
-                 })
-             if ($.isEmptyObject(data.error)) {
-                 Toast.fire({
-                     type: 'success',
-                     icon: 'success',
-                     title: data.success
-                 })
-             }else{
-                 Toast.fire({
-                     type: 'error',
-                     icon: 'error',
-                     title: data.error
-                 })
-             }
-             // End Message 
-         }
-     });
- }
-// End Wishlist remove   
+   
 
 ///  cart remove Start 
 function cartRemove(id){
@@ -635,6 +634,45 @@ function cartIncrement(rowId){
   }
  couponCalculation();
 </script>
+ <!--  //////////////// =========== Start Coupon Remove================= ////  -->
  
+<script type="text/javascript">
+     
+    function couponRemove(){
+       $.ajax({
+           type:'GET',
+           url: "{{ url('/coupon-remove') }}",
+           dataType: 'json',
+           success:function(data){
+               couponCalculation();
+               $('#couponField').show();
+               $('#coupon_name').val('');
+                // Start Message 
+               const Toast = Swal.mixin({
+                     toast: true,
+                     position: 'top-end',
+                     
+                     showConfirmButton: false,
+                     timer: 3000
+                   })
+               if ($.isEmptyObject(data.error)) {
+                   Toast.fire({
+                       type: 'success',
+                       icon: 'success',
+                       title: data.success
+                   })
+               }else{
+                   Toast.fire({
+                       type: 'error',
+                       icon: 'error',
+                       title: data.error
+                   })
+               }
+               // End Message 
+           }
+       });
+    }
+</script>
+
 </body>
 </html>
