@@ -28,7 +28,6 @@ My Cart Page
 				<tr>
 					<th class="cart-romove item">Image</th>
 					<th class="cart-description item">Name</th>
-					<th class="cart-product-name item">Color</th>
 					<th class="cart-edit item">Size</th>
 					<th class="cart-qty item">Quantity</th>
 					<th class="cart-sub-total item">Subtotal</th>

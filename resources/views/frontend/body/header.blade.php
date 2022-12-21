@@ -120,7 +120,7 @@
                 <div class="clearfix cart-total">
                   <div class="pull-right"> <span class="text">Sub Total :</span><span class='price' id="cartSubTotal"> </span> </div>
                   <div class="clearfix"></div>
-                  <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
+                  <a href="{{ route('checkout') }}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
                 <!-- /.cart-total--> 
                 
               </li>
@@ -210,6 +210,10 @@
 @if(session()->get('language') == 'urdu') {{ 'آج کی پیشکش' }} @else {{ 'TODAYS OFFER' }} @endif
                   
                 </a> </li>
+                
+ <li class="dropdown  navbar-right special-menu"> <a href="{{ route('home.blog') }}">Blog</a> </li>
+
+
               </ul>
               <!-- /.navbar-nav -->
               <div class="clearfix"></div>

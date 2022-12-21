@@ -31,7 +31,7 @@ My Checkout
 <div class="panel panel-default checkout-step-01">
 
 	<!-- panel-heading -->
-
+	 
     <!-- panel-heading -->
 
 	<div id="collapseOne" class="panel-collapse collapse in">
@@ -41,44 +41,48 @@ My Checkout
 			<div class="row">		
 
 				<!-- guest-login -->			
-				<div class="col-md-6 col-sm-6 already-registered-login">
+			 <div class="col-md-6 col-sm-6 already-registered-login">
 		 <h4 class="checkout-subtitle"><b>Shipping Address</b></h4>
-
-         <form class="register-form" action="{{ route('checkout.store') }}" method="POST">
+					 
+	<form class="register-form" action="{{ route('checkout.store') }}" method="POST">
 		@csrf
 
-					
-    <div class="form-group">
-    <label class="info-title" for="exampleInputEmail1"><b>Shipping Name</b>  <span>*</span></label>
+
+		<div class="form-group">
+	    <label class="info-title" for="exampleInputEmail1"><b>Shipping Name</b>  <span>*</span></label>
 	    <input type="text" name="shipping_name" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Full Name" value="{{ Auth::user()->name }}" required="">
 	  </div>  <!-- // end form group  -->
-
+	 
 
 <div class="form-group">
-<label class="info-title" for="exampleInputEmail1"><b>Email </b> <span>*</span></label>
-	   <input type="email" name="shipping_email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Email" value="{{ Auth::user()->email }}" required="">
+	    <label class="info-title" for="exampleInputEmail1"><b>Email </b> <span>*</span></label>
+	    <input type="email" name="shipping_email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Email" value="{{ Auth::user()->email }}" required="">
 	  </div>  <!-- // end form group  -->
 
 
 <div class="form-group">
-<label class="info-title" for="exampleInputEmail1"><b>Phone</b>  <span>*</span></label>
+	    <label class="info-title" for="exampleInputEmail1"><b>Phone</b>  <span>*</span></label>
 	    <input type="number" name="shipping_phone" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Phone" value="{{ Auth::user()->phone }}" required="">
 	  </div>  <!-- // end form group  -->
 
 
 	  <div class="form-group">
-      <label class="info-title" for="exampleInputEmail1"><b>Post Code </b> <span>*</span></label>
-	     <input type="text" name="post_code" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Post Code" required="">
+	    <label class="info-title" for="exampleInputEmail1"><b>Post Code </b> <span>*</span></label>
+	    <input type="text" name="post_code" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="Post Code" required="">
 	  </div>  <!-- // end form group  -->
 
-
+	 
+	 
 				</div>	
-					
 				<!-- guest-login -->
 
-<!-- already-registered-login -->
-<div class="col-md-6 col-sm-6 already-registered-login">
 
+ 
+
+
+				<!-- already-registered-login -->
+				<div class="col-md-6 col-sm-6 already-registered-login">
+					 
 
 <div class="form-group">
 	<h5><b>Division Select </b> <span class="text-danger">*</span></h5>
@@ -101,7 +105,7 @@ My Checkout
 	<div class="controls">
 		<select name="district_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select District</option>
-
+			 
 		</select>
 		@error('district_id') 
 	 <span class="text-danger">{{ $message }}</span>
@@ -131,6 +135,11 @@ My Checkout
 
 
 
+					
+
+
+
+					
 				</div>	
 				<!-- already-registered-login -->		
 
@@ -143,8 +152,8 @@ My Checkout
 <!-- End checkout-step-01  -->
 
 
-
-
+					    
+					  	
 					</div><!-- /.checkout-steps -->
 				</div>
 
@@ -206,8 +215,8 @@ My Checkout
 		 	@endif 
 
 		 </li>
-
-
+					 
+					
 
 				</ul>		
 			</div>
@@ -248,11 +257,10 @@ My Checkout
 		    	<div class="col-md-4">
 		    		<label for="">Cash</label> 		
        <input type="radio" name="payment_method" value="cash">	
-	   <img src="{{ asset('frontend/assets/images/payments/6.png') }}">  		
-		      		
+		  <img src="{{ asset('frontend/assets/images/payments/6.png') }}">  		
 		    	</div> <!-- end col md 4 -->
 
-
+				 	
 			</div> <!-- // end row  -->
 <hr>
   <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Payment Step</button>
@@ -265,7 +273,7 @@ My Checkout
 
 
 
-
+ 
 
 
 
@@ -273,7 +281,7 @@ My Checkout
 			</div><!-- /.row -->
 		</div><!-- /.checkout-box -->
 		<!-- === ===== BRANDS CAROUSEL ==== ======== -->
-
+ 
 
 
 
@@ -287,7 +295,8 @@ My Checkout
 
 
 
-<script type="text/javascript">
+ 
+ <script type="text/javascript">
       $(document).ready(function() {
         $('select[name="division_id"]').on('change', function(){
             var division_id = $(this).val();
@@ -318,7 +327,7 @@ My Checkout
                     success:function(data) {
                        var d =$('select[name="state_id"]').empty();
                           $.each(data, function(key, value){
-                              $('select[name="state_id"]').append('<option value="'+ value.id +'">' + value.state_id + '</option>');
+                              $('select[name="state_id"]').append('<option value="'+ value.id +'">' + value.state_name + '</option>');
                           });
                     },
                 });
@@ -329,3 +338,8 @@ My Checkout
  
     });
     </script>
+
+
+
+
+@endsection
