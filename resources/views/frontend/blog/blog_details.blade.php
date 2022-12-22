@@ -27,28 +27,26 @@
 	<img class="img-responsive" src="{{ asset($blogpost->post_image) }}" alt="">
 
 
-	<h1>@if(session()->get('language') == 'hindi') {{ $blogpost->post_title_hin }} @else {{ $blogpost->post_title_en }} @endif</h1>
+	<h1>@if(session()->get('language') == 'urdu') {{ $blogpost->post_title_ur }} @else {{ $blogpost->post_title_en }} @endif</h1>
 
 
 
 
 	<span class="date-time">{{ Carbon\Carbon::parse($blogpost->created_at)->diffForHumans()  }}</span>
 
+	
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"></div>
+            
 
-	<p> @if(session()->get('language') == 'hindi') {!!  $blogpost->post_details_hin  !!} @else {!!  $blogpost->post_details_en  !!} @endif
+	<p> @if(session()->get('language') == 'urdu') {!!  $blogpost->post_details_ur  !!} @else {!!  $blogpost->post_details_en  !!} @endif
 	</p>
 
 
-
-	<div class="social-media">
-		<span>share post:</span>
-		<a href="#"><i class="fa fa-facebook"></i></a>
-		<a href="#"><i class="fa fa-twitter"></i></a>
-		<a href="#"><i class="fa fa-linkedin"></i></a>
-		<a href=""><i class="fa fa-rss"></i></a>
-		<a href="" class="hidden-xs"><i class="fa fa-pinterest"></i></a>
-	</div>
-</div>
+  
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"></div>
+            
 
 
 
@@ -126,7 +124,7 @@
 
 @foreach($blogcategory as $category)
 	    	 <ul class="list-group">
-			 <a href="{{ url('blog/category/post/'.$category->id) }}"><li class="list-group-item">@if(session()->get('language') == 'hindi') {{ $category->blog_category_name_hin }} @else {{ $category->blog_category_name_en }} @endif</li></a>
+			 <a href="{{ url('blog/category/post/'.$category->id) }}"><li class="list-group-item">@if(session()->get('language') == 'urdu') {{ $category->blog_category_name_ur }} @else {{ $category->blog_category_name_en }} @endif</li></a>
 
 
    </ul>
@@ -166,7 +164,8 @@
 	</div>
 </div>
 
-
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-63a3d48942c861bc"></script>
 
 
 @endsection
