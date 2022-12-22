@@ -84,7 +84,7 @@ Sub Category | HealthMart
                   <h4 class="widget-title">Price Slider</h4>
                 </div>
                 <div class="sidebar-widget-body m-t-10">
-                  <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">$200.00</span> <span class="pull-right">$800.00</span> </span>
+                  <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">Rs. 100.00</span> <span class="pull-right">Rs. 8000.00</span> </span>
                     <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
                     <input type="text" class="price-slider" value="" >
                   </div>
@@ -144,14 +144,14 @@ Sub Category | HealthMart
               <!-- /.sidebar-widget --> 
               <!-- ============================================== COMPARE: END ============================================== --> 
               <!-- ============================================== PRODUCT TAGS ============================================== -->
-            @include('frontend.common.product_tags')
+            
 
 
 
             @include('frontend.common.testimonials')
               
             
-              <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
+              {{-- <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div> --}}
             </div>
             <!-- /.sidebar-filter --> 
           </div>
@@ -292,11 +292,18 @@ Sub Category | HealthMart
                             <div class="action">
                               <ul class="list-unstyled">
                                 <li class="add-cart-button btn-group">
-                                  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                  <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-                                </li>
-                                <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
+                        
+                        
+                             <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i> </button>
+                          
+                          <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                        </li>
+                        
+                        
+                        
+                          <button class="btn btn-primary icon" type="button" title="Wishlist" id="{{ $product->id }}" onclick="addToWishList(this.id)"> <i class="fa fa-heart"></i> </button>
+                        
+                                <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                               </ul>
                             </div>
                             <!-- /.action --> 
@@ -360,11 +367,18 @@ Sub Category | HealthMart
                                 <div class="action">
                                   <ul class="list-unstyled">
                                     <li class="add-cart-button btn-group">
-                                      <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                      <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-                                    </li>
-                                    <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                    <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
+                            
+                            
+                                 <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i> </button>
+                              
+                              <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                            </li>
+                            
+                            
+                            
+                              <button class="btn btn-primary icon" type="button" title="Wishlist" id="{{ $product->id }}" onclick="addToWishList(this.id)"> <i class="fa fa-heart"></i> </button>
+                            
+                                    <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                                   </ul>
                                 </div>
                                 <!-- /.action --> 
