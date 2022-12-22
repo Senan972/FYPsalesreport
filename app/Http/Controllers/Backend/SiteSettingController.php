@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SiteSetting;
 use Image;
+use App\Models\Seo;
 
 class SiteSettingController extends Controller
 {
@@ -74,5 +75,34 @@ SiteSetting::findOrFail($setting_id)->update([
 
     } // end else 
 } // end method 
+
+public function SeoSetting(){
+
+    $seo = Seo::find(1);
+    return view('backend.setting.seo_update',compact('seo'));
+
+}
+
+public function SeoSettingUpdate(Request $request){
+
+    $seo_id = $request->id;
+
+    Seo::findOrFail($seo_id)->update([
+    'meta_title' => $request->meta_title,
+    'meta_author' => $request->meta_author,
+    'meta_keyword' => $request->meta_keyword,
+    'meta_description' => $request->meta_description,
+    'google_analytics' => $request->google_analytics,		 
+
+    ]);
+
+    $notification = array(
+        'message' => 'Seo Updated Successfully',
+        'alert-type' => 'info'
+    );
+
+    return redirect()->back()->with($notification);
+
+} // end mehtod 
 
 }

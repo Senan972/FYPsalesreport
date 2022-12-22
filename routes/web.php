@@ -449,8 +449,11 @@ Route::get('/blog/category/post/{category_id}', [HomeBlogController::class, 'Hom
 // Admin Site Setting Routes 
 Route::prefix('setting')->group(function(){
 
-    Route::get('/site', [SiteSettingController::class, 'SiteSetting'])->name('site.setting');
+Route::get('/site', [SiteSettingController::class, 'SiteSetting'])->name('site.setting');
     
-    Route::post('/site/update', [SiteSettingController::class, 'SiteSettingUpdate'])->name('update.sitesetting');
+Route::post('/site/update', [SiteSettingController::class, 'SiteSettingUpdate'])->name('update.sitesetting');
     
-    });
+Route::get('/seo', [SiteSettingController::class, 'SeoSetting'])->name('seo.setting'); 
+
+Route::post('/seo/update', [SiteSettingController::class, 'SeoSettingUpdate'])->name('update.seosetting');
+});
