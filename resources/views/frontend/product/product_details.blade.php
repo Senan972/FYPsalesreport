@@ -238,8 +238,9 @@
 		</div><!-- /.row -->
 	</div><!-- /.quantity-container -->
 
-							
-
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"></div>
+            
 							
 
 							
@@ -270,136 +271,187 @@
 								</div><!-- /.tab-pane -->
 
 								<div id="review" class="tab-pane">
-									<div class="product-tab">
-																				
-										<div class="product-reviews">
-											<h4 class="title">Customer Reviews</h4>
+	<div class="product-tab">
 
-											<div class="reviews">
-												<div class="review">
-													<div class="review-title"><span class="summary">We love this product</span><span class="date"><i class="fa fa-calendar"></i><span>1 days ago</span></span></div>
-													<div class="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam suscipit."</div>
-																										</div>
+		<div class="product-reviews">
+			<h4 class="title">Customer Reviews</h4>
+
+			@php
+$reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(5)->get();
+@endphp			
+
+	<div class="reviews">
+
+		@foreach($reviews as $item)
+		@if($item->status == 0)
+
+		@else
+
+		<div class="review">
+
+        <div class="row">
+			<div class="col-md-3">
+			<img style="border-radius: 50%" src="{{ (!empty($item->user->profile_photo_path))? url('upload/user_images/'.$item->user->profile_photo_path):url('upload/no_image.jpg') }}" width="40px;" height="40px;"><b> {{ $item->user->name }}</b>
+			</div>
+
+			<div class="col-md-9">
+
+			</div>			
+		</div> <!-- // end row -->
+
+
+
+			<div class="review-title"><span class="summary">{{ $item->summary }}</span><span class="date"><i class="fa fa-calendar"></i><span> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }} </span></span></div>
+			<div class="text">"{{ $item->comment }}"</div>
+		 </div>
+
+		 @endif
+	@endforeach
+	</div><!-- /.reviews -->
+
+
+		</div><!-- /.product-reviews -->
+
+
+										
+<div class="product-add-review">
+	<h4 class="title">Write your own review</h4>
+	<div class="review-table">
+		 
+	</div><!-- /.review-table -->
 											
-											</div><!-- /.reviews -->
-										</div><!-- /.product-reviews -->
-										
-
-										
-										<div class="product-add-review">
-											<h4 class="title">Write your own review</h4>
-											<div class="review-table">
-												<div class="table-responsive">
-													<table class="table">	
-														<thead>
-															<tr>
-																<th class="cell-label">&nbsp;</th>
-																<th>1 star</th>
-																<th>2 stars</th>
-																<th>3 stars</th>
-																<th>4 stars</th>
-																<th>5 stars</th>
-															</tr>
-														</thead>	
-														<tbody>
-															<tr>
-																<td class="cell-label">Quality</td>
-																<td><input type="radio" name="quality" class="radio" value="1"></td>
-																<td><input type="radio" name="quality" class="radio" value="2"></td>
-																<td><input type="radio" name="quality" class="radio" value="3"></td>
-																<td><input type="radio" name="quality" class="radio" value="4"></td>
-																<td><input type="radio" name="quality" class="radio" value="5"></td>
-															</tr>
-															<tr>
-																<td class="cell-label">Price</td>
-																<td><input type="radio" name="quality" class="radio" value="1"></td>
-																<td><input type="radio" name="quality" class="radio" value="2"></td>
-																<td><input type="radio" name="quality" class="radio" value="3"></td>
-																<td><input type="radio" name="quality" class="radio" value="4"></td>
-																<td><input type="radio" name="quality" class="radio" value="5"></td>
-															</tr>
-															<tr>
-																<td class="cell-label">Value</td>
-																<td><input type="radio" name="quality" class="radio" value="1"></td>
-																<td><input type="radio" name="quality" class="radio" value="2"></td>
-																<td><input type="radio" name="quality" class="radio" value="3"></td>
-																<td><input type="radio" name="quality" class="radio" value="4"></td>
-																<td><input type="radio" name="quality" class="radio" value="5"></td>
-															</tr>
-														</tbody>
-													</table><!-- /.table .table-bordered -->
-												</div><!-- /.table-responsive -->
-											</div><!-- /.review-table -->
-											
-											<div class="review-form">
-												<div class="form-container">
-													<form role="form" class="cnt-form">
-														
-														<div class="row">
-															<div class="col-sm-6">
-																<div class="form-group">
-																	<label for="exampleInputName">Your Name <span class="astk">*</span></label>
-																	<input type="text" class="form-control txt" id="exampleInputName" placeholder="">
-																</div><!-- /.form-group -->
-																<div class="form-group">
-																	<label for="exampleInputSummary">Summary <span class="astk">*</span></label>
-																	<input type="text" class="form-control txt" id="exampleInputSummary" placeholder="">
-																</div><!-- /.form-group -->
-															</div>
-
-															<div class="col-md-6">
-																<div class="form-group">
-																	<label for="exampleInputReview">Review <span class="astk">*</span></label>
-																	<textarea class="form-control txt txt-review" id="exampleInputReview" rows="4" placeholder=""></textarea>
-																</div><!-- /.form-group -->
-															</div>
-														</div><!-- /.row -->
-														
-														<div class="action text-right">
-															<button class="btn btn-primary btn-upper">SUBMIT REVIEW</button>
-														</div><!-- /.action -->
-
-													</form><!-- /.cnt-form -->
-												</div><!-- /.form-container -->
-											</div><!-- /.review-form -->
-
-										</div><!-- /.product-add-review -->										
-										
-							        </div><!-- /.product-tab -->
-								</div><!-- /.tab-pane -->
-
-								<div id="tags" class="tab-pane">
-									<div class="product-tag">
-										
-										<h4 class="title">Product Tags</h4>
-										<form role="form" class="form-inline form-cnt">
-											<div class="form-container">
-									
-												<div class="form-group">
-													<label for="exampleInputTag">Add Your Tags: </label>
-													<input type="email" id="exampleInputTag" class="form-control txt">
-													
-
-												</div>
-
-												<button class="btn btn-upper btn-primary" type="submit">ADD TAGS</button>
-											</div><!-- /.form-container -->
-										</form><!-- /.form-cnt -->
-
-										<form role="form" class="form-inline form-cnt">
-											<div class="form-group">
-												<label>&nbsp;</label>
-												<span class="text col-md-offset-3">Use spaces to separate tags. Use single quotes (') for phrases.</span>
-											</div>
-										</form><!-- /.form-cnt -->
-
+		<div class="review-form">
+			@guest
+<p> <b> For Add Product Review. You Need to Login First <a href="{{ route('login') }}">Login Here</a> </b> </p>
+			@else 
+			<div class="form-container">
+  <form role="form" class="cnt-form" method="post" action="{{ route('review.store') }}">
+  	@csrf
+  	<input type="hidden" name="product_id" value="{{ $product->id }}">
+	
+	<div class="row">
+		<div class="col-sm-6">
+			 
+			<div class="form-group">
+				<label for="exampleInputSummary">Summary <span class="astk">*</span></label>
+	 <input type="text" name="summary" class="form-control txt" id="exampleInputSummary" placeholder="">
+			</div><!-- /.form-group -->
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="exampleInputReview">Review <span class="astk">*</span></label>
+ <textarea class="form-control txt txt-review" name="comment" id="exampleInputReview" rows="4" placeholder=""></textarea>
+			</div><!-- /.form-group -->
+		</div>
+	</div><!-- /.row -->
+	
+	<div class="action text-right">
+		<button type="submit" class="btn btn-primary btn-upper">SUBMIT REVIEW</button>
+	</div><!-- /.action -->
+</form><!-- /.cnt-form -->
+			</div><!-- /.form-container -->
+   @endguest
+		</div><!-- /.review-form -->
+	</div><!-- /.product-add-review -->										
+	
+</div><!-- /.product-tab -->
+</div><!-- /.tab-pane -->
+<div id="tags" class="tab-pane">
+<div class="product-tag">
+	
+	<h4 class="title">Product Tags</h4>
+	<form role="form" class="form-inline form-cnt">
+		<div class="form-container">
+			<div class="form-group">
+				<label for="exampleInputTag">Add Your Tags: </label>
+				<input type="email" id="exampleInputTag" class="form-control txt">
+				
+			</div>
+			<button class="btn btn-upper btn-primary" type="submit">ADD TAGS</button>
+		</div><!-- /.form-container -->
+	</form><!-- /.form-cnt -->
+	<form role="form" class="form-inline form-cnt">
+		<div class="form-group">
+			<label>&nbsp;</label>
+			<span class="text col-md-offset-3">Use spaces to separate tags. Use single quotes (') for phrases.</span>
+		</div>
+	</form><!-- /.form-cnt -->
 									</div><!-- /.product-tab -->
 								</div><!-- /.tab-pane -->
-
 							</div><!-- /.tab-content -->
 						</div><!-- /.col -->
 					</div><!-- /.row -->
 				</div><!-- /.product-tabs -->
+				<!-- ===== ======= UPSELL PRODUCTS ==== ========== -->
+<section class="section featured-product wow fadeInUp">
+	<h3 class="section-title">Releted products</h3>
+	<div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
+		@foreach($relatedProduct as $product)
+	    	
+		<div class="item item-carousel">
+			<div class="products">
+				
+	<div class="product">		
+		<div class="product-image">
+			<div class="image">
+				<a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->product_thambnail) }}" alt=""></a>
+			</div><!-- /.image -->			
+			            <div class="tag sale"><span>sale</span></div>            		   
+		</div><!-- /.product-image -->
+			
+		
+		<div class="product-info text-left">
+			<h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
+				@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
+			<div class="rating rateit-small"></div>
+			<div class="description"></div>
+ @if ($product->discount_price == NULL)
+<div class="product-price">	
+				<span class="price">
+					${{ $product->selling_price }}	 </span> 
+			</div><!-- /.product-price -->
+ @else
+<div class="product-price">	
+				<span class="price">
+					${{ $product->discount_price }}	 </span>
+			  <span class="price-before-discount">$ {{ $product->selling_price }}</span>								
+			</div><!-- /.product-price -->
+ @endif
+			
+			
+		</div><!-- /.product-info -->
+					<div class="cart clearfix animate-effect">
+				<div class="action">
+					<ul class="list-unstyled">
+						<li class="add-cart-button btn-group">
+							<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
+								<i class="fa fa-shopping-cart"></i>													
+							</button>
+							<button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+													
+						</li>
+	                   
+		                <li class="lnk wishlist">
+							<a class="add-to-cart" href="detail.html" title="Wishlist">
+								 <i class="icon fa fa-heart"></i>
+							</a>
+						</li>
+						<li class="lnk">
+							<a class="add-to-cart" href="detail.html" title="Compare">
+							    <i class="fa fa-signal"></i>
+							</a>
+						</li>
+					</ul>
+				</div><!-- /.action -->
+			</div><!-- /.cart -->
+			</div><!-- /.product -->
+      
+			</div><!-- /.products -->
+		</div><!-- /.item -->
+	
+	 	@endforeach
+			</div><!-- /.home-owl-carousel -->
+</section><!-- /.section -->
 
 				<!-- ============================================== UPSELL PRODUCTS ============================================== -->
 <section class="section featured-product wow fadeInUp">
@@ -484,8 +536,10 @@
     </div>
 
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
 
-
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-63a3d48942c861bc"></script>
 
 
 @endsection
