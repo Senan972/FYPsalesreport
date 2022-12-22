@@ -53,6 +53,7 @@ class AllUserController extends Controller
         Order::findOrFail($order_id)->update([
             'return_date' => Carbon::now()->format('d F Y'),
             'return_reason' => $request->return_reason,
+            'return_order' => 1,
         ]);
 
 
@@ -79,6 +80,11 @@ class AllUserController extends Controller
 
     } // end method 
 
+  ///////////// Order Traking ///////
+
+  public function OrderTraking(){
+
+  } // end mehtod 
 
  ///////////// Order Traking ///////
 

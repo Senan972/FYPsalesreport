@@ -16,6 +16,7 @@
 
             <li><a href="" type="button" data-toggle="modal" data-target="#ordertraking"><i class="icon fa fa-check"></i>Order Traking</a></li>
 
+
 <li>
               @auth
               <a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>User Profile</a>
@@ -59,9 +60,15 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
           
+        @php
+         $setting = App\Models\SiteSetting::find(1);
+          @endphp
+
           <!-- ============================================================= LOGO ============================================================= -->
+
+          <div class="logo"> <a href="{{ url('/') }}"> <img src="{{ asset($setting->logo) }}" alt="logo"> </a> </div>
           
-          <div class="logo"> <a href="/"> <img style="height: 44px" src="{{ asset('frontend/assets/images/logo6.png') }}" alt="logo"> </a> </div>
+          
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
@@ -118,7 +125,7 @@
                 <div class="clearfix cart-total">
                   <div class="pull-right"> <span class="text">Sub Total :</span><span class='price' id="cartSubTotal"> </span> </div>
                   <div class="clearfix"></div>
-                  <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
+                  <a href="{{ route('checkout') }}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
                 <!-- /.cart-total--> 
                 
               </li>
@@ -208,6 +215,10 @@
 @if(session()->get('language') == 'urdu') {{ 'آج کی پیشکش' }} @else {{ 'TODAYS OFFER' }} @endif
                   
                 </a> </li>
+                
+ <li class="dropdown  navbar-right special-menu"> <a href="{{ route('home.blog') }}">Blog</a> </li>
+
+
               </ul>
               <!-- /.navbar-nav -->
               <div class="clearfix"></div>

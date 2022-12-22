@@ -230,11 +230,11 @@
 
 @php 
       $order = App\Models\Order::where('id',$order->id)->where('return_reason','=',NULL)->first();
-      @endphp
+@endphp
 
 
-      @if($order)
 
+@if($order)
 <form action="{{ route('return.order',$order->id) }}" method="post">
         @csrf
 
@@ -243,7 +243,7 @@
     <textarea name="return_reason" id="" class="form-control" cols="30" rows="05">Return Reason</textarea>    
  
   </div>
-  <button type="submit" class="btn btn-danger">Submit</button>
+  <button type="submit" class="btn btn-danger">Order Return</button>
 
 </form>
 
