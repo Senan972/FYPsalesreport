@@ -241,6 +241,10 @@ Route::get('/invoice_download/{order_id}', [AllUserController::class, 'InvoiceDo
 
 });
 
+/// Order Traking Route 
+Route::post('/order/tracking', [AllUserController::class, 'OrderTraking'])->name('order.tracking');    
+
+
 
 
 

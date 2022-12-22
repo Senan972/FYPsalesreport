@@ -14,6 +14,7 @@ use App\Models\MultiImg;
 use Illuminate\Support\Facades\Hash;
 
  
+ 
 class IndexController extends Controller
 {
     public function index(){
@@ -166,6 +167,7 @@ class IndexController extends Controller
 		}
 		///  End Load More Product with Ajax 
 
+		
 		return view('frontend.product.subcategory_view',compact('products','categories','breadsubcat'));
 
 	}
