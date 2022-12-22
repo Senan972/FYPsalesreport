@@ -80,6 +80,11 @@ class AllUserController extends Controller
 
     } // end method 
 
+  ///////////// Order Traking ///////
+
+  public function OrderTraking(){
+
+  } // end mehtod 
 
 
 
