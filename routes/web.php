@@ -321,7 +321,6 @@ Route::get('/state/edit/{id}', [ShippingAreaController::class, 'StateEdit'])->na
 Route::post('/state/update/{id}', [ShippingAreaController::class, 'StateUpdate'])->name('state.update');
 
 Route::get('/state/delete/{id}', [ShippingAreaController::class, 'StateDelete'])->name('state.delete');
- 
 
  
 });

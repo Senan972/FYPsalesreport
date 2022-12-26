@@ -11,7 +11,7 @@ My Checkout
 	<div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
-				<li><a href="/">Home</a></li>
+				<li><a href="home.html">Home</a></li>
 				<li class='active'>Checkout</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
@@ -174,9 +174,11 @@ My Checkout
 					@foreach($carts as $item)
 					<li> 
 						<strong>Image: </strong>
-						<img src="{{ asset($item->options->image) }}" style="height: 50px; width: 50px;">
+						<img src="{{ asset($item->options->image) }}" style="height: 150px; width: 150px;">
 					</li>
 
+					 <br>
+					 <br>
 					<li> 
 						<strong>Qty: </strong>
 						 ( {{ $item->qty }} )
@@ -204,9 +206,9 @@ My Checkout
 
 		 	@else
 
-<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+<strong>SubTotal: </strong> Rs. {{ $cartTotal }}/- <hr>
 
-<strong>Grand Total : </strong> ${{ $cartTotal }} <hr>
+<strong>Grand Total : </strong> Rs. {{ $cartTotal }}/- <hr>
 
 
 		 	@endif 
@@ -252,7 +254,7 @@ My Checkout
 		    	</div> <!-- end col md 4 -->
 
 		    	<div class="col-md-4">
-		    		<label for="">Cash</label> 		
+		    		<label for="">Cash on Delivery</label> 		
        <input type="radio" name="payment_method" value="cash">	
 		  <img src="{{ asset('frontend/assets/images/payments/6.png') }}">  		
 		    	</div> <!-- end col md 4 -->

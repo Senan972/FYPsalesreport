@@ -3,18 +3,18 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-
+  
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-
+		 
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
+			   
+		 
 
-
-
-
+	 
 <!--   ------------ Add Division Page -------- -->
 
 
@@ -31,7 +31,7 @@
 
  <form method="post" action="{{ route('division.update',$divisions->id) }}" >
 	 	@csrf
-
+					   
 
 	 <div class="form-group">
 		<h5>Division Name  <span class="text-danger">*</span></h5>
@@ -42,8 +42,8 @@
 	 @enderror 
 	</div>
 	</div>
-
-
+ 
+					 
 
 			 <div class="text-xs-right">
 	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">					 
@@ -53,7 +53,7 @@
 
 
 
-
+					  
 					</div>
 				</div>
 				<!-- /.box-body -->
@@ -61,16 +61,16 @@
 			  <!-- /.box --> 
 			</div>
 
-
+ 
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-
+	  
 	  </div>
-
+  
 
 
 

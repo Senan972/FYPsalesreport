@@ -3,16 +3,16 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-
+  
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-
+		 
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-
-
+			   
+		 
 
 			<div class="col-8">
 
@@ -29,25 +29,25 @@
 								<th>Division Name </th> 
 								<th>District Name </th>
 								<th>Action</th>
-
+								 
 							</tr>
 						</thead>
 						<tbody>
 	 @foreach($district as $item)
 	 <tr>
-     <td> {{ $item->division->division_name }}  </td> 
+		<td> {{ $item->division->division_name }}  </td> 
 		<td> {{ $item->district_name }}  </td> 
 
 		<td width="40%">
-        <a href="{{ route('district.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
+ <a href="{{ route('district.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
  <a href="{{ route('district.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 		</td>
-
+							 
 	 </tr>
 	  @endforeach
 						</tbody>
-
+						 
 					  </table>
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 			  </div>
 			  <!-- /.box -->
 
-
+			          
 			</div>
 			<!-- /.col -->
 
@@ -74,9 +74,9 @@
 					<div class="table-responsive">
 
 
-                    <form method="post" action="{{ route('district.store') }}" >
+ <form method="post" action="{{ route('district.store') }}" >
 	 	@csrf
-
+				
 
 
 <div class="form-group">
@@ -105,8 +105,8 @@
 	 @enderror 
 	</div>
 	</div>
-
-
+ 
+					 
 
 			 <div class="text-xs-right">
 	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">					 
@@ -116,7 +116,7 @@
 
 
 
-
+					  
 					</div>
 				</div>
 				<!-- /.box-body -->
@@ -124,16 +124,16 @@
 			  <!-- /.box --> 
 			</div>
 
-
+ 
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-
+	  
 	  </div>
-
+  
 
 
 

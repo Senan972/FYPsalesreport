@@ -9,11 +9,12 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
 use App\Models\Wishlist;
 use Carbon\Carbon;
-use App\Models\ShipDivision;
 
 use App\Models\Coupon;
 use Illuminate\Support\Facades\Session;
 
+use App\Models\ShipDivision;
+ 
 class CartController extends Controller
 {
     public function AddToCart(Request $request, $id){
@@ -32,8 +33,7 @@ class CartController extends Controller
     			'price' => $product->selling_price,
     			'weight' => 1, 
     			'options' => [
-    				'image' => $product->product_thambnail,
-    				'color' => $request->color,
+    				'image' => $product->product_thumbnail,
     				'size' => $request->size,
     			], 
     		]);
@@ -49,8 +49,7 @@ class CartController extends Controller
     			'price' => $product->discount_price,
     			'weight' => 1, 
     			'options' => [
-    				'image' => $product->product_thambnail,
-    				'color' => $request->color,
+    				'image' => $product->product_thumbnail,
     				'size' => $request->size,
     			],
     		]);
@@ -76,7 +75,7 @@ class CartController extends Controller
     } // end method 
 
 
-    /// remove mini cart 
+/// remove mini cart 
     public function RemoveMiniCart($rowId){
     	Cart::remove($rowId);
     	return response()->json(['success' => 'Product Remove from Cart']);
@@ -166,8 +165,10 @@ class CartController extends Controller
         return response()->json(['success' => 'Coupon Remove Successfully']);
     }
 
-     // Checkout Method 
-     public function CheckoutCreate(){
+
+
+ // Checkout Method 
+    public function CheckoutCreate(){
 
         if (Auth::check()) {
             if (Cart::total() > 0) {
@@ -176,10 +177,9 @@ class CartController extends Controller
         $cartQty = Cart::count();
         $cartTotal = Cart::total();
 
-
         $divisions = ShipDivision::orderBy('division_name','ASC')->get();
         return view('frontend.checkout.checkout_view',compact('carts','cartQty','cartTotal','divisions'));
-
+                
             }else{
 
             $notification = array(
@@ -191,7 +191,7 @@ class CartController extends Controller
 
             }
 
-
+            
         }else{
 
              $notification = array(
@@ -202,5 +202,12 @@ class CartController extends Controller
         return redirect()->route('login')->with($notification);
 
         }
-    }//end method
+
+    } // end method 
+
+
+
+
+
+
 }

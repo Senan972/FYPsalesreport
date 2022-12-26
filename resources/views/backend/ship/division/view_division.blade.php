@@ -3,16 +3,16 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-
+  
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-
+		 
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-
-
+			   
+		 
 
 			<div class="col-8">
 
@@ -28,7 +28,7 @@
 							<tr>
 								<th>Division Name </th> 
 								<th>Action</th>
-
+								 
 							</tr>
 						</thead>
 						<tbody>
@@ -37,15 +37,15 @@
 		<td> {{ $item->division_name }}  </td> 
 
 		<td width="40%">
-        <a href="{{ route('division.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
+ <a href="{{ route('division.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
  <a href="{{ route('division.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 		</td>
-
+							 
 	 </tr>
 	  @endforeach
 						</tbody>
-
+						 
 					  </table>
 					</div>
 				</div>
@@ -53,7 +53,7 @@
 			  </div>
 			  <!-- /.box -->
 
-
+			          
 			</div>
 			<!-- /.col -->
 
@@ -74,7 +74,7 @@
 
  <form method="post" action="{{ route('division.store') }}" >
 	 	@csrf
-
+					   
 
 	 <div class="form-group">
 		<h5>Division Name  <span class="text-danger">*</span></h5>
@@ -85,8 +85,8 @@
 	 @enderror 
 	</div>
 	</div>
-
-
+ 
+					 
 
 			 <div class="text-xs-right">
 	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">					 
@@ -96,7 +96,7 @@
 
 
 
-
+					  
 					</div>
 				</div>
 				<!-- /.box-body -->
@@ -104,16 +104,16 @@
 			  <!-- /.box --> 
 			</div>
 
-
+ 
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-
+	  
 	  </div>
-
+  
 
 
 
