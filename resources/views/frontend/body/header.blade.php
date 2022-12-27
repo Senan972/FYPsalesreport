@@ -192,7 +192,7 @@
                             
                             @foreach ($childcategories as $childcategory)
                             <ul class="links">
-                              <li><a href="#">
+                              <li><a href="{{ url('childcategory/product/'.$childcategory->id.'/'.$childcategory->childcategory_slug_en ) }}">
                                 @if(session() -> get('language') == 'urdu') {{ $childcategory -> childcategory_name_ur }} @else {{ $childcategory -> childcategory_name_en }} @endif
                                 
                                 </a></li>

@@ -205,9 +205,8 @@ Route::get('/product/tag/{tag}', [IndexController::class, 'TagWiseProduct']);
 // Frontend SubCategory wise Data
 Route::get('/subcategory/product/{subcat_id}/{slug}', [IndexController::class, 'SubCatWiseProduct']);
 
-// Frontend Sub-SubCategory wise Data
+// Frontend ChildCategory wise Data
 Route::get('/childcategory/product/{childcat_id}/{slug}', [IndexController::class, 'ChildCatWiseProduct']);
-
 
 // Product View Modal with Ajax
 Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);

@@ -154,7 +154,7 @@ class IndexController extends Controller
 
 	  // Subcategory wise data
 	  public function SubCatWiseProduct($subcat_id, $slug) {
-		$products = Product::where('status', 1)->where('subcategory_id',$subcat_id)->orderBy('id','DESC')->paginate(3);
+		$products = Product::where('status', 1)->where('subcategory_id',$subcat_id)->orderBy('id','DESC')->paginate(6);
         $categories = Category::orderBy('category_name_en','ASC') -> get();
 
         return view('frontend.product.subcategory_view', compact('products', 'categories'));
@@ -175,18 +175,15 @@ class IndexController extends Controller
 
 	}
 
-  // Sub-Subcategory wise data
-	public function SubSubCatWiseProduct($subsubcat_id,$slug){
-		$products = Product::where('status',1)->where('subsubcategory_id',$subsubcat_id)->orderBy('id','DESC')->paginate(6);
-		$categories = Category::orderBy('category_name_en','ASC')->get();
-
-		$breadsubsubcat = SubSubCategory::with(['category','subcategory'])->where('id',$subsubcat_id)->get();
-
-		return view('frontend.product.sub_subcategory_view',compact('products','categories','breadsubsubcat'));
-
-	}
 
 
+// Child category wise data
+public function ChildCatWiseProduct($subsubcat_id,$slug){
+	$products = Product::where('status',1)->where('childcategory_id',$subsubcat_id)->orderBy('id','DESC')->paginate(6);
+	$categories = Category::orderBy('category_name_en','ASC')->get();
+	return view('frontend.product.childcategory_view',compact('products','categories'));
+
+}
 
     /// Product View With Ajax
 	public function ProductViewAjax($id){
