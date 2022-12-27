@@ -13,8 +13,14 @@ Sub Category | HealthMart
       <div class="breadcrumb-inner">
         <ul class="list-inline list-unstyled">
           <li><a href="#">Home</a></li>
-          <li class='active'>
-            @if(session() -> get('language') == 'urdu') {{ 'مرض قلب' }} @else {{ 'Heart Disease' }} @endif
+          @foreach($breadsubcat as $item)
+          <li class='active'>{{ $item->category->category_name_en }}</li>
+          @endforeach
+  
+          @foreach($breadsubcat as $item)
+          <li class='active'>{{ $item->subcategory_name_en }}</li>
+          @endforeach
+            {{-- @if(session() -> get('language') == 'urdu') {{ 'مرض قلب' }} @else {{ 'Heart Disease' }} @endif --}}
 
           </li>
         </ul>
@@ -176,7 +182,16 @@ Sub Category | HealthMart
             </div>
           </div>
           
-       
+          @foreach($breadsubcat as $item)
+
+          <span class="badge badge-danger" style="background: #808080">{{ $item->category->category_name_en }} </span>
+                 @endforeach
+         /
+                 @foreach($breadsubcat as $item)
+          <span class="badge badge-danger" style="background: #FF0000">{{ $item->subcategory_name_en }} </span>
+         
+                 @endforeach  
+                 
           <div class="clearfix filters-container m-t-10">
             <div class="row">
               <div class="col col-sm-6 col-md-2">

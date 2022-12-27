@@ -207,7 +207,8 @@ Product Search Page
           </div>
         </div>
 
-
+        <h4><b>Total Search </b><span class="badge badge-danger" style="background: #FF0000;"> {{ count($products) }} </span> Items  </h4>
+        
         <div class="clearfix filters-container m-t-10">
           <div class="row">
             <div class="col col-sm-6 col-md-2">
@@ -406,7 +407,7 @@ Product Search Page
 
 
             @if ($product->discount_price == NULL)
-            <div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span>  </div>
+            <div class="product-price"> <span class="price"> Rs. {{ $product->selling_price }} </span>  </div>
             @else
 <div class="product-price"> <span class="price"> Rs. {{ $product->discount_price }} </span> <span class="price-before-discount">Rs. {{ $product->selling_price }}</span> </div>
             @endif

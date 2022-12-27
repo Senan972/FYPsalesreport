@@ -1,7 +1,7 @@
 @extends('frontend.main_master')
 @section('content')
 @section('title')
-Sub - Subcategory Product 
+Childcategory Products
 @endsection
 
 
@@ -13,7 +13,15 @@ Sub - Subcategory Product
     <div class="breadcrumb-inner">
       <ul class="list-inline list-unstyled">
         <li><a href="#">Home</a></li>
-        <li class='active'>Handbags</li>
+        @foreach($breadchildcat as $item)
+        <li class='active'>{{ $item->category->category_name_en }}</li>
+        @endforeach
+        @foreach($breadchildcat as $item)
+        <li class='active'>{{ $item->subcategory->subcategory_name_en }}</li>
+        @endforeach
+         @foreach($breadchildcat as $item)
+        <li class='active'>{{ $item->childcategory_name_en }}</li>
+        @endforeach
       </ul>
     </div>
     <!-- /.breadcrumb-inner --> 
@@ -98,7 +106,7 @@ Sub - Subcategory Product
                 <h4 class="widget-title">Price Slider</h4>
               </div>
               <div class="sidebar-widget-body m-t-10">
-                <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">$200.00</span> <span class="pull-right">$800.00</span> </span>
+                <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">Rs. 200.00</span> <span class="pull-right">Rs. 800.00</span> </span>
                   <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
                   <input type="text" class="price-slider" value="" >
                 </div>
@@ -206,7 +214,21 @@ Sub - Subcategory Product
             <!-- /.container-fluid --> 
           </div>
         </div>
+        @foreach($breadchildcat as $item)
 
+        <span class="badge badge-danger" style="background: #808080">{{ $item->category->category_name_en }} </span>
+       
+               @endforeach
+       
+               @foreach($breadchildcat as $item)
+       
+        <span class="badge badge-danger" style="background: #808080">{{ $item->subcategory->subcategory_name_en }} </span>
+               @endforeach
+       
+                @foreach($breadchildcat as $item)
+       
+         <span class="badge badge-danger" style="background: #FF0000">{{ $item->childcategory_name_en }} </span>
+               @endforeach
 
         <div class="clearfix filters-container m-t-10">
           <div class="row">

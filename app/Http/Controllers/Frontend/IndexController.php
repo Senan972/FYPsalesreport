@@ -11,6 +11,8 @@ use App\Models\Brand;
 use App\Models\Slider;
 use App\Models\Product;
 use App\Models\MultiImg; 
+use App\Models\SubCategory;
+use App\Models\ChildCategory;
 use Illuminate\Support\Facades\Hash;
 use App\Models\BlogPost;
 
@@ -157,8 +159,9 @@ class IndexController extends Controller
 		$products = Product::where('status', 1)->where('subcategory_id',$subcat_id)->orderBy('id','DESC')->paginate(6);
         $categories = Category::orderBy('category_name_en','ASC') -> get();
 
-        return view('frontend.product.subcategory_view', compact('products', 'categories'));
+		$breadsubcat = SubCategory::with(['category'])->where('id',$subcat_id)->get();
 
+		return view('frontend.product.subcategory_view',compact('products','categories','breadsubcat'));
 
 		///  Load More Product with Ajax 
 		if ($request->ajax()) {
@@ -178,10 +181,13 @@ class IndexController extends Controller
 
 
 // Child category wise data
-public function ChildCatWiseProduct($subsubcat_id,$slug){
-	$products = Product::where('status',1)->where('childcategory_id',$subsubcat_id)->orderBy('id','DESC')->paginate(6);
+public function ChildCatWiseProduct($childcat_id,$slug){
+	$products = Product::where('status',1)->where('childcategory_id',$childcat_id)->orderBy('id','DESC')->paginate(6);
 	$categories = Category::orderBy('category_name_en','ASC')->get();
-	return view('frontend.product.childcategory_view',compact('products','categories'));
+	
+	$breadchildcat = ChildCategory::with(['category','subcategory'])->where('id',$childcat_id)->get();
+
+	return view('frontend.product.childcategory_view',compact('products','categories','breadchildcat'));
 
 }
 
