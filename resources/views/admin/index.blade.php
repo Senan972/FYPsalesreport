@@ -266,20 +266,20 @@
 						</div>
 
 						@php
-$orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get();
-	@endphp
-						<div class="box-body">
-							<div class="table-responsive">
-								<table class="table no-border">
-									<thead>
-									<tr class="text-uppercase bg-lightest">
-	<th style="min-width: 250px"><span class="text-white">Date</span></th>
-	<th style="min-width: 100px"><span class="text-fade">Invoice</span></th>
-	<th style="min-width: 100px"><span class="text-fade">Amount</span></th>
-	<th style="min-width: 150px"><span class="text-fade">Payment</span></th>
-	<th style="min-width: 130px"><span class="text-fade">Status</span></th>
-	<th style="min-width: 120px"><span class="text-fade">Process</span> </th>
-</tr>
+						$orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get();
+							@endphp
+												<div class="box-body">
+													<div class="table-responsive">
+														<table class="table no-border">
+															<thead>
+															<tr class="text-uppercase bg-lightest">
+							<th style="min-width: 250px"><span class="text-white">Date</span></th>
+							<th style="min-width: 100px"><span class="text-fade">Invoice</span></th>
+							<th style="min-width: 100px"><span class="text-fade">Amount</span></th>
+							<th style="min-width: 150px"><span class="text-fade">Payment</span></th>
+							<th style="min-width: 130px"><span class="text-fade">Status</span></th>
+							<th style="min-width: 120px"><span class="text-fade">Process</span> </th>
+						</tr>
 									</thead>
 									<tbody>
 										@foreach($orders as $item)
@@ -299,7 +299,7 @@ $orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get
 
 			<td>
 				<span class="text-fade font-weight-600 d-block font-size-16">
-					$ {{ $item->amount }}
+					Rs. {{ $item->amount }}
 				</span>
 
 			</td>
