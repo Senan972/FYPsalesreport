@@ -136,7 +136,7 @@ Sub Category | HealthMart
               </div>
               <!-- /.sidebar-widget --> 
               <!-- ============================================== TYPE: END ============================================== --> 
-              <!-- ============================================== COMPARE============================================== -->
+              {{-- <!-- ============================================== COMPARE============================================== -->
               <div class="sidebar-widget wow fadeInUp outer-top-vs">
                 <h3 class="section-title">Compare products</h3>
                 <div class="sidebar-widget-body">
@@ -148,7 +148,7 @@ Sub Category | HealthMart
                 <!-- /.sidebar-widget-body --> 
               </div>
               <!-- /.sidebar-widget --> 
-              <!-- ============================================== COMPARE: END ============================================== --> 
+              <!-- ============================================== COMPARE: END ============================================== -->  --}}
               <!-- ============================================== PRODUCT TAGS ============================================== -->
             
 
@@ -188,7 +188,7 @@ Sub Category | HealthMart
                  @endforeach
          /
                  @foreach($breadsubcat as $item)
-          <span class="badge badge-danger" style="background: #FF0000">{{ $item->subcategory_name_en }} </span>
+          <span class="badge badge-danger" style="background: #157ED2">{{ $item->subcategory_name_en }} </span>
          
                  @endforeach  
                  
@@ -288,7 +288,7 @@ Sub Category | HealthMart
                             @if(session()->get('language') == 'urdu') {{ $product -> product_name_ur }} @else {{ $product -> product_name_en }} @endif
 
                             </a></h3>
-                            <div class="rating rateit-small"></div>
+                            
                             <div class="description"></div>
 
                             @if ($product->discount_price == NULL)
@@ -318,7 +318,7 @@ Sub Category | HealthMart
                         
                           <button class="btn btn-primary icon" type="button" title="Wishlist" id="{{ $product->id }}" onclick="addToWishList(this.id)"> <i class="fa fa-heart"></i> </button>
                         
-                                <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                
                               </ul>
                             </div>
                             <!-- /.action --> 
@@ -364,7 +364,7 @@ Sub Category | HealthMart
 @if(session()->get('language') == 'urdu') {{ $product -> product_name_ur }} @else {{ $product -> product_name_en }} @endif
                                 
                             </a></h3>
-                              <div class="rating rateit-small"></div>
+                              
                             @if ($product->discount_price == NULL)
                             <div class="product-price"> <span class="price"> Rs. {{ $product->selling_price }} </span> </div>
 
@@ -393,7 +393,7 @@ Sub Category | HealthMart
                             
                               <button class="btn btn-primary icon" type="button" title="Wishlist" id="{{ $product->id }}" onclick="addToWishList(this.id)"> <i class="fa fa-heart"></i> </button>
                             
-                                    <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                    
                                   </ul>
                                 </div>
                                 <!-- /.action --> 

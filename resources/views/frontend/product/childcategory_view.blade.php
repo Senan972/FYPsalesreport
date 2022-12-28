@@ -56,7 +56,7 @@ Childcategory Products
  @foreach($categories as $category)
 	<div class="accordion-group">
 	<div class="accordion-heading"> <a href="#collapse{{ $category->id }}" data-toggle="collapse" class="accordion-toggle collapsed"> 
-		@if(session()->get('language') == 'hindi') {{ $category->category_name_hin }} @else {{ $category->category_name_en }} @endif </a> </div>
+		@if(session()->get('language') == 'urdu') {{ $category->category_name_ur }} @else {{ $category->category_name_en }} @endif </a> </div>
 	<!-- /.accordion-heading -->
 	<div class="accordion-body collapse" id="collapse{{ $category->id }}" style="height: 0px;">
 	  <div class="accordion-inner">
@@ -68,7 +68,7 @@ Childcategory Products
    @foreach($subcategories as $subcategory)
 	    <ul>
 	      <li><a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en ) }}">
-	      	@if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif</a></li>
+	      	@if(session()->get('language') == 'urdu') {{ $subcategory->subcategory_name_ur }} @else {{ $subcategory->subcategory_name_en }} @endif</a></li>
 
 	    </ul>
 	@endforeach 
@@ -136,25 +136,7 @@ Childcategory Products
             </div>
             <!-- /.sidebar-widget --> 
             <!-- ============================================== MANUFACTURES: END ============================================== --> 
-            <!-- ============================================== COLOR============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Colors</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <ul class="list">
-                  <li><a href="#">Red</a></li>
-                  <li><a href="#">Blue</a></li>
-                  <li><a href="#">Yellow</a></li>
-                  <li><a href="#">Pink</a></li>
-                  <li><a href="#">Brown</a></li>
-                  <li><a href="#">Teal</a></li>
-                </ul>
-              </div>
-              <!-- /.sidebar-widget-body --> 
-            </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== COLOR: END ============================================== --> 
+{{--              
             <!-- == ======= COMPARE==== ==== -->
             <div class="sidebar-widget wow fadeInUp outer-top-vs">
               <h3 class="section-title">Compare products</h3>
@@ -167,7 +149,7 @@ Childcategory Products
               <!-- /.sidebar-widget-body --> 
             </div>
             <!-- /.sidebar-widget --> 
-            <!-- ============================================== COMPARE: END ============================================== --> 
+            <!-- ============================================== COMPARE: END ============================================== -->  --}}
 
 
             <!-- == ====== PRODUCT TAGS ==== ======= -->
@@ -227,7 +209,7 @@ Childcategory Products
        
                 @foreach($breadchildcat as $item)
        
-         <span class="badge badge-danger" style="background: #FF0000">{{ $item->childcategory_name_en }} </span>
+         <span class="badge badge-danger" style="background: #157ED2">{{ $item->childcategory_name_en }} </span>
                @endforeach
 
         <div class="clearfix filters-container m-t-10">
@@ -333,8 +315,8 @@ Childcategory Products
 
         <div class="product-info text-left">
           <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
-          	@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
-          <div class="rating rateit-small"></div>
+          	@if(session()->get('language') == 'urdu') {{ $product->product_name_ur }} @else {{ $product->product_name_en }} @endif</a></h3>
+          
           <div class="description"></div>
 
 
@@ -361,7 +343,7 @@ Childcategory Products
                 <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
               </li>
               <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-              <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
+              
             </ul>
           </div>
           <!-- /.action --> 
@@ -423,8 +405,8 @@ Childcategory Products
         <div class="col col-sm-8 col-lg-8">
           <div class="product-info">
             <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
-            	@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
-            <div class="rating rateit-small"></div>
+            	@if(session()->get('language') == 'urdu') {{ $product->product_name_ur }} @else {{ $product->product_name_en }} @endif</a></h3>
+            
 
 
             @if ($product->discount_price == NULL)
@@ -435,7 +417,7 @@ Childcategory Products
 
             <!-- /.product-price -->
             <div class="description m-t-10">
-            	@if(session()->get('language') == 'hindi') {{ $product->short_descp_hin }} @else {{ $product->short_descp_en }} @endif</div>
+            	@if(session()->get('language') == 'urdu') {{ $product->short_descp_ur }} @else {{ $product->short_descp_en }} @endif</div>
             <div class="cart clearfix animate-effect">
               <div class="action">
                 <ul class="list-unstyled">
@@ -444,7 +426,7 @@ Childcategory Products
                     <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                   </li>
                   <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                  <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
+                  
                 </ul>
               </div>
               <!-- /.action --> 

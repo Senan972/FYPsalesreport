@@ -26,6 +26,7 @@ class ReviewController extends Controller
     		'user_id' => Auth::id(),
     		'comment' => $request->comment,
     		'summary' => $request->summary,
+            'rating' => $request->quality,
     		'created_at' => Carbon::now(),
 
     	]);
@@ -42,7 +43,7 @@ class ReviewController extends Controller
 
 
 
-	public function PendingReview(){
+ public function PendingReview(){
 
     	$review = Review::where('status',0)->orderBy('id','DESC')->get();
     	return view('backend.review.pending_review',compact('review'));
@@ -63,26 +64,27 @@ class ReviewController extends Controller
         return redirect()->back()->with($notification);
     } // end mehtod 
 
-	public function PublishReview(){
-		$review = Review::where('status',1)->orderBy('id','DESC')->get();
-			return view('backend.review.publish_review',compact('review'));
-		}
-	
-	
-	
-		public function DeleteReview($id){
-	
-			Review::findOrFail($id)->delete();
-	
-			$notification = array(
-				'message' => 'Review Delete Successfully',
-				'alert-type' => 'success'
-			);
-	
-			return redirect()->back()->with($notification);
-	
-		} // end method 
-	
-	
-	
+
+    public function PublishReview(){
+    $review = Review::where('status',1)->orderBy('id','DESC')->get();
+    	return view('backend.review.publish_review',compact('review'));
+    }
+
+
+
+    public function DeleteReview($id){
+
+    	Review::findOrFail($id)->delete();
+
+    	$notification = array(
+            'message' => 'Review Delete Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    } // end method 
+
+
+
 }

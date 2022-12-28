@@ -49,7 +49,7 @@
               @if(session()->get('language') == 'urdu') {{ $product -> product_name_ur }} @else {{ $product -> product_name_en }} @endif
 
             </a></h3>
-            <div class="rating rateit-small"></div>
+            
 
             @if ($product->discount_price == NULL)
             <div class="product-price"> <span class="price"> Rs. {{ $product -> selling_price }}</span></div>
