@@ -81,18 +81,33 @@
           @csrf
               <div class="control-group">
                 <ul class="categories-filter animate-dropdown">
-                  <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">
-@if(session()->get('language') == 'urdu') {{ 'اقسام' }} @else {{ 'CATEGORIES' }} @endif
+                  {{-- <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="#">
+                    @if(session()->get('language') == 'urdu') {{ 'اقسام' }} @else {{ 'CATEGORIES' }} @endif
                     
                     <b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu" >
-                      <li class="menu-header">Computer</li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Clothing</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Electronics</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Shoes</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Watches</a></li>
+                    @foreach ($categories as $category)
+
+                      <li class="menu-header">
+                        @if(session() -> get('language') == 'urdu') {{ $category -> category_name_ur }} @else {{ $category -> category_name_en }} @endif
+                      </li>
+
+                      @php
+                      $subcategories = App\Models\SubCategory::where('category_id', $category -> id) -> orderBy('subcategory_name_en','ASC') -> get();
+                      @endphp
+                      @foreach ($subcategories as $subcategory)
+
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">-
+                        @if(session() -> get('language') == 'urdu') {{ $subcategory -> subcategory_name_ur }} @else {{ $subcategory -> subcategory_name_en }} @endif
+                        
+                      </a></li>
+                      @endforeach
+                      
+
+                    @endforeach
+
                     </ul>
-                  </li>
+                  </li> --}}
                 </ul>
                 <input class="search-field" onfocus="search_result_show()" onblur="search_result_hide()" id="search" name="search" placeholder="Search here..." />
                 <button class="search-button" type="submit"></button> </div>
