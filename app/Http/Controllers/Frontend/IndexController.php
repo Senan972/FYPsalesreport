@@ -125,30 +125,25 @@ class IndexController extends Controller
 	public function ProductDetails($id,$slug){
 		$product = Product::findOrFail($id);
 
-		$color_en = $product->product_color_en;
-		$product_color_en = explode(',', $color_en);
-
-		$color_hin = $product->product_color_hin;
-		$product_color_hin = explode(',', $color_hin);
 
 		$size_en = $product->product_size_en;
 		$product_size_en = explode(',', $size_en);
 
-		$size_hin = $product->product_size_hin;
-		$product_size_hin = explode(',', $size_hin);
+		$size_ur = $product->product_size_ur;
+		$product_size_ur = explode(',', $size_ur);
 
 		$multiImag = MultiImg::where('product_id',$id)->get();
 
 		$cat_id = $product->category_id;
 		$relatedProduct = Product::where('category_id',$cat_id)->where('id','!=',$id)->orderBy('id','DESC')->get();
-	 	return view('frontend.product.product_details',compact('product','multiImag','product_color_en','product_color_hin','product_size_en','product_size_hin','relatedProduct'));
+	 	return view('frontend.product.product_details',compact('product','multiImag','product_size_en','product_size_ur','relatedProduct'));
 
 	}
 
 
 
 	public function TagWiseProduct($tag){
-		$products = Product::where('status',1)->where('product_tags_en',$tag)->where('product_tags_hin',$tag)->orderBy('id','DESC')->paginate(3);
+		$products = Product::where('status',1)->where('product_tags_en',$tag)->where('product_tags_ur',$tag)->orderBy('id','DESC')->paginate(3);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
 		return view('frontend.tags.tags_view',compact('products','categories'));
 
@@ -195,15 +190,11 @@ public function ChildCatWiseProduct($childcat_id,$slug){
 	public function ProductViewAjax($id){
 		$product = Product::with('category','brand')->findOrFail($id);
 
-		$color = $product->product_color_en;
-		$product_color = explode(',', $color);
-
 		$size = $product->product_size_en;
 		$product_size = explode(',', $size);
 
 		return response()->json(array(
 			'product' => $product,
-			'color' => $product_color,
 			'size' => $product_size,
 
 		));
