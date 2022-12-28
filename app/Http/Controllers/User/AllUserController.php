@@ -11,7 +11,7 @@ use App\Models\OrderItem;
 use Illuminate\Support\Facades\Session;
 use Auth;
 use Carbon\Carbon;
-
+ 
 use App\Mail\OrderMail;
 use PDF;
 
@@ -34,21 +34,24 @@ class AllUserController extends Controller
 
     } // end mehtod 
 
+
+
     public function InvoiceDownload($order_id){
-        $order = Order::with('division','district','state','user')->where('id',$order_id)->where('user_id',Auth::id())->first();
-         $orderItem = OrderItem::with('product')->where('order_id',$order_id)->orderBy('id','DESC')->get();
-         // return view('frontend.user.order.order_invoice',compact('order','orderItem'));
+       $order = Order::with('division','district','state','user')->where('id',$order_id)->where('user_id',Auth::id())->first();
+    	$orderItem = OrderItem::with('product')->where('order_id',$order_id)->orderBy('id','DESC')->get();
+    	// return view('frontend.user.order.order_invoice',compact('order','orderItem'));
 		$pdf = PDF::loadView('frontend.user.order.order_invoice',compact('order','orderItem'))->setPaper('a4')->setOptions([
-            'tempDir' => public_path(),
-            'chroot' => public_path(),
-    ]);
-    return $pdf->download('invoice.pdf');
- 
- 
- 
-     } // end mehtod 
- 
-     public function ReturnOrder(Request $request,$order_id){
+				'tempDir' => public_path(),
+				'chroot' => public_path(),
+		]);
+		return $pdf->download('invoice.pdf');
+
+
+
+    } // end mehtod 
+
+
+    public function ReturnOrder(Request $request,$order_id){
 
         Order::findOrFail($order_id)->update([
             'return_date' => Carbon::now()->format('d F Y'),
@@ -66,12 +69,16 @@ class AllUserController extends Controller
 
     } // end method 
 
+
+
     public function ReturnOrderList(){
 
         $orders = Order::where('user_id',Auth::id())->where('return_reason','!=',NULL)->orderBy('id','DESC')->get();
         return view('frontend.user.order.return_order_view',compact('orders'));
 
     } // end method 
+
+
 
     public function CancelOrders(){
 
@@ -80,38 +87,36 @@ class AllUserController extends Controller
 
     } // end method 
 
-  ///////////// Order Traking ///////
 
-  public function OrderTraking(){
 
-  } // end mehtod 
+    ///////////// Order Traking ///////
 
- ///////////// Order Traking ///////
+    public function OrderTraking(Request $request){
 
- public function OrderTraking(Request $request){
+        $invoice = $request->code;
 
-    $invoice = $request->code;
+        $track = Order::where('invoice_no',$invoice)->first();
 
-    $track = Order::where('invoice_no',$invoice)->first();
+        if ($track) {
+            
+            // echo "<pre>";
+            // print_r($track);
 
-    if ($track) {
+        return view('frontend.traking.track_order',compact('track'));
 
-        // echo "<pre>";
-        // print_r($track);
+        }else{
 
-    return view('frontend.traking.track_order',compact('track'));
+            $notification = array(
+            'message' => 'Invoice Code Is Invalid',
+            'alert-type' => 'error'
+        );
 
-    }else{
+        return redirect()->back()->with($notification);
 
-        $notification = array(
-        'message' => 'Invoice Code Is Invalid',
-        'alert-type' => 'error'
-    );
+        }
 
-    return redirect()->back()->with($notification);
+    } // end mehtod 
 
-    }
- } // end mehtod 
 
 
 
