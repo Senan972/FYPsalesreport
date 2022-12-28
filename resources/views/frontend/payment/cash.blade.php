@@ -48,24 +48,24 @@ Cash On Delivery
 		 <li>
 		 	@if(Session::has('coupon'))
 
-<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+<strong>SubTotal: </strong> Rs. {{ $cartTotal }} <hr>
 
 <strong>Coupon Name : </strong> {{ session()->get('coupon')['coupon_name'] }}
 ( {{ session()->get('coupon')['coupon_discount'] }} % )
  <hr>
 
- <strong>Coupon Discount : </strong> ${{ session()->get('coupon')['discount_amount'] }} 
+ <strong>Coupon Discount : </strong> Rs. {{ session()->get('coupon')['discount_amount'] }} 
  <hr>
 
-  <strong>Grand Total : </strong> ${{ session()->get('coupon')['total_amount'] }} 
+  <strong>Grand Total : </strong> Rs. {{ session()->get('coupon')['total_amount'] }} 
  <hr>
 
 
 		 	@else
 
-<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+<strong>SubTotal: </strong> Rs. {{ $cartTotal }} <hr>
 
-<strong>Grand Total : </strong> ${{ $cartTotal }} <hr>
+<strong>Grand Total : </strong> Rs. {{ $cartTotal }} <hr>
 
 
 		 	@endif 
@@ -101,7 +101,7 @@ Cash On Delivery
                             @csrf
         <div class="form-row">
 
-          <img src="{{ asset('frontend/assets/images/payments/cash.png') }}">
+          <img src="{{ asset('frontend/assets/images/payments/6.png') }}">
 
             <label for="card-element">
 

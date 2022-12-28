@@ -6,9 +6,6 @@
       <div class="header-top-inner">
         <div class="cnt-account">
           <ul class="list-unstyled">
-            <li><a href="#"><i class="icon fa fa-user"></i>
-              @if(session() -> get('language') == 'urdu') میرا اکاونٹ @else My Account @endif
-            </a></li>
             
             <li><a href="{{ route('wishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
             <li><a href="{{ route('mycart') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
@@ -228,10 +225,7 @@
                 </li>
                 @endforeach
                 
-                <li class="dropdown  navbar-right special-menu"> <a href="#">
-@if(session()->get('language') == 'urdu') {{ 'آج کی پیشکش' }} @else {{ 'TODAYS OFFER' }} @endif
-                  
-                </a> </li>
+                
                 
  <li class="dropdown  navbar-right special-menu"> <a href="{{ route('home.blog') }}">Blog</a> </li>
 

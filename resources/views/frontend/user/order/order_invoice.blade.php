@@ -56,7 +56,7 @@
                Email:support@easylearningbd.com <br>
                Mob: 1245454545 <br>
                Dhaka 1207,Dhanmondi:#4 <br>
-
+              
             </pre>
         </td>
     </tr>
@@ -69,7 +69,7 @@
     <tr>
         <td>
           <p class="font" style="margin-left: 20px;">
-          <strong>Name:</strong> {{ $order->name }}<br>
+           <strong>Name:</strong> {{ $order->name }}<br>
            <strong>Email:</strong> {{ $order->email }} <br>
            <strong>Phone:</strong> {{ $order->phone }} <br>
            @php
@@ -84,11 +84,10 @@
         </td>
         <td>
           <p class="font">
-          <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_no}}</h3>
+            <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_no}}</h3>
             Order Date: {{ $order->order_date }} <br>
              Delivery Date: {{ $order->delivered_date }} <br>
             Payment Type : {{ $order->payment_method }} </span>
-         
          </p>
         </td>
     </tr>
@@ -109,20 +108,19 @@
       </tr>
     </thead>
     <tbody>
-     
-
-    @foreach($orderItem as $item)
+     @foreach($orderItem as $item)
       <tr class="font">
         <td align="center">
-        <img src="{{ public_path($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
+            <img src="{{ public_path($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
         </td>
         <td align="center"> {{ $item->product->product_name_en }}</td>
         <td align="center">
-        @if($item->size == NULL)
+          @if($item->size == NULL)
            ----
           @else
             {{ $item->size }}
           @endif
+            
         </td>
         <td align="center">{{ $item->color }}</td>
         <td align="center">{{ $item->product->product_code }}</td>
@@ -131,15 +129,15 @@
         <td align="center">${{ $item->price * $item->qty }} </td>
       </tr>
       @endforeach
+      
     </tbody>
   </table>
   <br>
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-        <h2><span style="color: green;">Subtotal:</span>${{ $order->amount }}</h2>
+            <h2><span style="color: green;">Subtotal:</span>${{ $order->amount }}</h2>
             <h2><span style="color: green;">Total:</span> ${{ $order->amount }}</h2>
-            
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>

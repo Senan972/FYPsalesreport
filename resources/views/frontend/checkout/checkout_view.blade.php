@@ -174,41 +174,43 @@ My Checkout
 					@foreach($carts as $item)
 					<li> 
 						<strong>Image: </strong>
-						<img src="{{ asset($item->options->image) }}" style="height: 150px; width: 150px;">
+						<img src="{{ asset($item->options->image) }}" style="height: 50px; width: 50px;">
 					</li>
-
-					 <br>
-					 <br>
+<br>
 					<li> 
 						<strong>Qty: </strong>
 						 ( {{ $item->qty }} )
 
 						 <strong>Size: </strong>
 						 {{ $item->options->size }}
+						 
+<br>
+<br>
 					</li>
                     @endforeach 
+					
 <hr>
 		 <li>
 		 	@if(Session::has('coupon'))
 
-<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+<strong>SubTotal: </strong> Rs. {{ $cartTotal }} <hr>
 
 <strong>Coupon Name : </strong> {{ session()->get('coupon')['coupon_name'] }}
 ( {{ session()->get('coupon')['coupon_discount'] }} % )
  <hr>
 
- <strong>Coupon Discount : </strong> ${{ session()->get('coupon')['discount_amount'] }} 
+ <strong>Coupon Discount : </strong> Rs. {{ session()->get('coupon')['discount_amount'] }} 
  <hr>
 
-  <strong>Grand Total : </strong> ${{ session()->get('coupon')['total_amount'] }} 
+  <strong>Grand Total : </strong> Rs. {{ session()->get('coupon')['total_amount'] }} 
  <hr>
 
 
 		 	@else
 
-<strong>SubTotal: </strong> Rs. {{ $cartTotal }}/- <hr>
+<strong>SubTotal: </strong> Rs. {{ $cartTotal }} <hr>
 
-<strong>Grand Total : </strong> Rs. {{ $cartTotal }}/- <hr>
+<strong>Grand Total : </strong> Rs. {{ $cartTotal }} <hr>
 
 
 		 	@endif 
@@ -254,7 +256,7 @@ My Checkout
 		    	</div> <!-- end col md 4 -->
 
 		    	<div class="col-md-4">
-		    		<label for="">Cash on Delivery</label> 		
+		    		<label for="">Cash</label> 		
        <input type="radio" name="payment_method" value="cash">	
 		  <img src="{{ asset('frontend/assets/images/payments/6.png') }}">  		
 		    	</div> <!-- end col md 4 -->

@@ -149,33 +149,30 @@ $route = Route::current() -> getName();
         @else
         @endif
 
-     @if($shipping == true)
+        @if($shipping == true)
 
 
         <li class="treeview {{ ($prefix == '/shipping')?'active':'' }}  ">
-          <a href="#">
-            <i data-feather="file"></i>
-            <span>Shipping Area</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-          <li class="{{ ($route == 'manage-division')? 'active':'' }}"><a href="{{ route('manage-division') }}"><i class="ti-more"></i>Ship Division</a></li>
-          <li class="{{ ($route == 'manage-district')? 'active':'' }}"><a href="{{ route('manage-district') }}"><i class="ti-more"></i>Ship District</a></li>
+         <a href="#">
+           <i data-feather="file"></i>
+           <span>Shipping Area</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         <ul class="treeview-menu">
+       <li class="{{ ($route == 'manage-division')? 'active':'' }}"><a href="{{ route('manage-division') }}"><i class="ti-more"></i>Ship Division</a></li>
 
-<li class="{{ ($route == 'manage-state')? 'active':'' }}"><a href="{{ route('manage-state') }}"><i class="ti-more"></i>Ship State</a></li>
+        <li class="{{ ($route == 'manage-district')? 'active':'' }}"><a href="{{ route('manage-district') }}"><i class="ti-more"></i>Ship District</a></li>
 
-          
+        <li class="{{ ($route == 'manage-state')? 'active':'' }}"><a href="{{ route('manage-state') }}"><i class="ti-more"></i>Ship State</a></li>
 
             
-          </ul>
-        
-
-          </li>        
-
-          @else
-        @endif
+            
+         </ul>
+       </li>        
+       @else
+       @endif
 
      @if($blog == true)
 

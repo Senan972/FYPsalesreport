@@ -59,7 +59,7 @@ Order Traking Page
      position: relative
  }
  .track .step.active:before {
-    background: #157ed2
+     background: #157ed2
  }
  .track .step::before {
      height: 7px;
@@ -70,7 +70,7 @@ Order Traking Page
      top: 18px
  }
  .track .step.active .icon {
-    background: #157ed2;
+     background: #157ed2;
      color: #fff
  }
  .track .icon {
@@ -142,10 +142,10 @@ Order Traking Page
 
 <div class="container">
     <article class="card">
-       
-    <header class="card-header"> <b> My Orders / Tracking </b> </header>
+        <header class="card-header"> <b> My Orders / Tracking </b> </header>
         <div class="card-body">
-            <div class="row" style="margin-left: 30px; margin-top: 20px;">
+           
+     <div class="row" style="margin-left: 30px; margin-top: 20px;">
      	<div class="col-md-2">
      		<b> Invoice Number </b><br>
      		{{ $track->invoice_no }}
@@ -175,25 +175,36 @@ Order Traking Page
      		<b> Total Amount  </b><br>
      		$ {{ $track->amount  }}
      	</div> <!-- // end col md 2 -->
+     	
+     </div> <!-- // end row   -->     
 
-     </div> <!-- // end row   -->    
+
+
+
+
+
+
+
             <div class="track">
-            @if($track->status == 'pending')
+
+     @if($track->status == 'pending')
 
  <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Pending</span> </div>
 
 
 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Order Confirmed</span> </div>
 
-<div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Order Processing  </span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Order Processing  </span> </div>
 
-<div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Picked</span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Picked</span> </div>
 
-<div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Shipped </span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Shipped </span> </div>
 
- <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Delivered </span> </div>
+     <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Delivered </span> </div>
 
- @elseif($track->status == 'confirm')
+
+
+  @elseif($track->status == 'confirm')
 
   <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Pending</span> </div>
 
@@ -269,18 +280,18 @@ Order Traking Page
      @endif  
 
 
-
+ 
 
             </div> <!-- // end track  -->
 
 
             <hr><br><br>
-
-
+            
+            
         </div>
     </article>
 </div>
-
+ 
 
 
 
