@@ -48,14 +48,15 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>EasyShop</strong></h2>
+          <h2 style="color: green; font-size: 26px;"><strong>HealthMart</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
-               EasyShop Head Office
-               Email:support@easylearningbd.com <br>
-               Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
+            HealthMart - Online marketplace for health services
+               Email:ssali00972@gmail.com || inaqi69@gmail.com <br>
+               Mob: 03145197911 || 03055777362 <br>
+               COMSATS WAH <br>
+              
 
             </pre>
         </td>
@@ -111,7 +112,7 @@
      @foreach($orderItem as $item)
       <tr class="font">
         <td align="center">
-            <img src="{{ public_path($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
+            <img src="{{ public_path($item->product->product_thumbnail)  }}" height="60px;" width="60px;" alt="">
         </td>
         <td align="center"> {{ $item->product->product_name_en }}</td>
         <td align="center">

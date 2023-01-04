@@ -189,14 +189,6 @@
                   <label for=""> Product Name </label>
                 </td>
 
-             <td width="10%">
-                  <label for=""> Product Code</label>
-                </td>
-
-
-               <td width="10%">
-                  <label for=""> Color </label>
-                </td>
 
                 <td width="10%">
                   <label for=""> Size </label>
@@ -216,21 +208,13 @@
               @foreach($orderItem as $item)
        <tr>
                <td width="10%">
-                  <label for=""><img src="{{ asset($item->product->product_thambnail) }}" height="50px;" width="50px;"> </label>
+                  <label for=""><img src="{{ asset($item->product->product_thumbnail) }}" height="50px;" width="50px;"> </label>
                 </td>
 
                <td width="20%">
                   <label for=""> {{ $item->product->product_name_en }}</label>
                 </td>
 
-
-                <td width="10%">
-                  <label for=""> {{ $item->product->product_code }}</label>
-                </td>
-
-               <td width="10%">
-                  <label for=""> {{ $item->color }}</label>
-                </td>
 
                <td width="10%">
                   <label for=""> {{ $item->size }}</label>
