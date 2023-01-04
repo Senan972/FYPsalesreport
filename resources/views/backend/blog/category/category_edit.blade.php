@@ -48,7 +48,7 @@
 
 
 	<div class="form-group">
-		<h5>Blog Category Hindi <span class="text-danger">*</span></h5>
+		<h5>Blog Category Urdu <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="blog_category_name_ur" class="form-control" value="{{ $blogcategory->blog_category_name_ur }}"  >
      @error('blog_category_name_ur') 

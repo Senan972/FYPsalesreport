@@ -28,7 +28,7 @@
 							<tr>
 
 								<th>Blog Category En</th>
-								<th>Blog Category Hin </th>
+								<th>Blog Category Ur </th>
 								<th>Action</th>
 
 							</tr>
@@ -92,7 +92,7 @@
 
 
 	<div class="form-group">
-		<h5>Blog Category Hindi <span class="text-danger">*</span></h5>
+		<h5>Blog Category Urdu <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="blog_category_name_ur" class="form-control" >
      @error('blog_category_name_ur') 

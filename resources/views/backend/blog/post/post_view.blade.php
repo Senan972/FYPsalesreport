@@ -52,7 +52,7 @@
 			<div class="col-md-6">
 
 				 <div class="form-group">
-			<h5>Post Title Hin <span class="text-danger">*</span></h5>
+			<h5>Post Title Ur <span class="text-danger">*</span></h5>
 			<div class="controls">
 				<input type="text" name="post_title_ur" class="form-control" required="">
      @error('post_title_ur') 
@@ -137,10 +137,10 @@
 			<div class="col-md-6">
 
 	     <div class="form-group">
-			<h5>Post Details Hindi <span class="text-danger">*</span></h5>
+			<h5>Post Details Urdu <span class="text-danger">*</span></h5>
 			<div class="controls">
 	<textarea id="editor2" name="post_details_ur" rows="10" cols="80">
-		Post Details Hindi
+		Post Details Urdu
 						</textarea>       
 	 		 </div>
 		</div>

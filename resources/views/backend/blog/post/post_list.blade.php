@@ -31,7 +31,7 @@
 								<th>Post Category  </th>
 								<th>Post Image </th>
 								<th>Post Title En </th>
-								<th>Post Title Hin </th>
+								<th>Post Title Ur </th>
 								<th>Action</th>
 
 							</tr>
