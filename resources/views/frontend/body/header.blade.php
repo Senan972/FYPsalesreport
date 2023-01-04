@@ -171,7 +171,7 @@
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
               <ul class="nav navbar-nav">
-                <li class="active dropdown yamm-fw"> <a href="{{ url('/') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+                <li class="active dropdown yamm-fw"> <a href="{{ url('/') }}">
             @if(session() -> get('language') == 'urdu') ہوم پیج @else Home @endif
             </a> </li>
                 {{-- //Get categories table data --}}

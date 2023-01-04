@@ -12,8 +12,6 @@ Tags | HealthMart
     <div class="container">
       <div class="breadcrumb-inner">
         <ul class="list-inline list-unstyled">
-          <li><a href="#">Home</a></li>
-          <li class='active'>Handbags</li>
         </ul>
       </div>
       <!-- /.breadcrumb-inner --> 
@@ -81,7 +79,7 @@ Tags | HealthMart
                   <h4 class="widget-title">Price Slider</h4>
                 </div>
                 <div class="sidebar-widget-body m-t-10">
-                  <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">$200.00</span> <span class="pull-right">$800.00</span> </span>
+                  <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">Rs. 200.00</span> <span class="pull-right">Rs. 800.00</span> </span>
                     <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
                     <input type="text" class="price-slider" value="" >
                   </div>
@@ -98,12 +96,11 @@ Tags | HealthMart
                 </div>
                 <div class="sidebar-widget-body">
                   <ul class="list">
-                    <li><a href="#">Forever 18</a></li>
-                    <li><a href="#">Nike</a></li>
-                    <li><a href="#">Dolce & Gabbana</a></li>
-                    <li><a href="#">Alluare</a></li>
-                    <li><a href="#">Chanel</a></li>
-                    <li><a href="#">Other Brand</a></li>
+                  <li><a href="#">Medicine</a></li>
+                  <li><a href="#">Tablets</a></li>
+                  <li><a href="#">Injections</a></li>
+                  <li><a href="#">Vitamins</a></li>
+                  <li><a href="#">Baby Care</a></li>
                   </ul>
                   <!--<a href="#" class="lnk btn btn-primary">Show Now</a>--> 
                 </div>
@@ -111,25 +108,7 @@ Tags | HealthMart
               </div>
               <!-- /.sidebar-widget --> 
               <!-- ============================================== MANUFACTURES: END ============================================== --> 
-              <!-- ============================================== COLOR============================================== -->
-              <div class="sidebar-widget wow fadeInUp">
-                <div class="widget-header">
-                  <h4 class="widget-title">Colors</h4>
-                </div>
-                <div class="sidebar-widget-body">
-                  <ul class="list">
-                    <li><a href="#">Red</a></li>
-                    <li><a href="#">Blue</a></li>
-                    <li><a href="#">Yellow</a></li>
-                    <li><a href="#">Pink</a></li>
-                    <li><a href="#">Brown</a></li>
-                    <li><a href="#">Teal</a></li>
-                  </ul>
-                </div>
-                <!-- /.sidebar-widget-body --> 
-              </div>
-              <!-- /.sidebar-widget --> 
-              <!-- ============================================== COLOR: END ============================================== --> 
+              
               <!-- ============================================== COMPARE============================================== -->
               <div class="sidebar-widget wow fadeInUp outer-top-vs">
                 <h3 class="section-title">Compare products</h3>
@@ -151,7 +130,6 @@ Tags | HealthMart
             @include('frontend.common.testimonials')
               
             
-              <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
             </div>
             <!-- /.sidebar-filter --> 
           </div>

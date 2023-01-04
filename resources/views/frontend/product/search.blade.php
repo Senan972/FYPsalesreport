@@ -11,10 +11,7 @@ Product Search Page
 <div class="breadcrumb">
   <div class="container">
     <div class="breadcrumb-inner">
-      <ul class="list-inline list-unstyled">
-        <li><a href="#">Home</a></li>
-        <li class='active'>Handbags</li>
-      </ul>
+      
     </div>
     <!-- /.breadcrumb-inner --> 
   </div>
@@ -37,7 +34,7 @@ Product Search Page
           <div class="sidebar-filter"> 
             <!-- ============================================== SIDEBAR CATEGORY ============================================== -->
             <div class="sidebar-widget wow fadeInUp">
-              <h3 class="section-title">shop by</h3>
+              <h3 class="section-title">Shop by</h3>
               <div class="widget-header">
                 <h4 class="widget-title">Category</h4>
               </div>
@@ -48,7 +45,7 @@ Product Search Page
  @foreach($categories as $category)
 	<div class="accordion-group">
 	<div class="accordion-heading"> <a href="#collapse{{ $category->id }}" data-toggle="collapse" class="accordion-toggle collapsed"> 
-		@if(session()->get('language') == 'hindi') {{ $category->category_name_hin }} @else {{ $category->category_name_en }} @endif </a> </div>
+		@if(session()->get('language') == 'urdu') {{ $category->category_name_ur }} @else {{ $category->category_name_en }} @endif </a> </div>
 	<!-- /.accordion-heading -->
 	<div class="accordion-body collapse" id="collapse{{ $category->id }}" style="height: 0px;">
 	  <div class="accordion-inner">
@@ -60,7 +57,7 @@ Product Search Page
    @foreach($subcategories as $subcategory)
 	    <ul>
 	      <li><a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en ) }}">
-	      	@if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif</a></li>
+	      	@if(session()->get('language') == 'urdu') {{ $subcategory->subcategory_name_ur }} @else {{ $subcategory->subcategory_name_en }} @endif</a></li>
 
 	    </ul>
 	@endforeach 
@@ -98,7 +95,7 @@ Product Search Page
                 <h4 class="widget-title">Price Slider</h4>
               </div>
               <div class="sidebar-widget-body m-t-10">
-                <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">$200.00</span> <span class="pull-right">$800.00</span> </span>
+                <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">Rs. 200.00</span> <span class="pull-right">Rs. 800.00</span> </span>
                   <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
                   <input type="text" class="price-slider" value="" >
                 </div>
@@ -115,12 +112,11 @@ Product Search Page
               </div>
               <div class="sidebar-widget-body">
                 <ul class="list">
-                  <li><a href="#">Forever 18</a></li>
-                  <li><a href="#">Nike</a></li>
-                  <li><a href="#">Dolce & Gabbana</a></li>
-                  <li><a href="#">Alluare</a></li>
-                  <li><a href="#">Chanel</a></li>
-                  <li><a href="#">Other Brand</a></li>
+                <li><a href="#">Medicine</a></li>
+                  <li><a href="#">Tablets</a></li>
+                  <li><a href="#">Injections</a></li>
+                  <li><a href="#">Vitamins</a></li>
+                  <li><a href="#">Baby Care</a></li>
                 </ul>
                 <!--<a href="#" class="lnk btn btn-primary">Show Now</a>--> 
               </div>
@@ -179,7 +175,7 @@ Product Search Page
 
 
 
-            <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
+            
           </div>
           <!-- /.sidebar-filter --> 
         </div>
@@ -312,7 +308,7 @@ Product Search Page
 
         <div class="product-info text-left">
           <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
-          	@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
+          	@if(session()->get('language') == 'urdu') {{ $product->product_name_ur }} @else {{ $product->product_name_en }} @endif</a></h3>
           <div class="rating rateit-small"></div>
           <div class="description"></div>
 
@@ -402,7 +398,7 @@ Product Search Page
         <div class="col col-sm-8 col-lg-8">
           <div class="product-info">
             <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
-            	@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
+            	@if(session()->get('language') == 'urdu') {{ $product->product_name_ur }} @else {{ $product->product_name_en }} @endif</a></h3>
             <div class="rating rateit-small"></div>
 
 
@@ -414,7 +410,7 @@ Product Search Page
 
             <!-- /.product-price -->
             <div class="description m-t-10">
-            	@if(session()->get('language') == 'hindi') {{ $product->short_descp_hin }} @else {{ $product->short_descp_en }} @endif</div>
+            	@if(session()->get('language') == 'urdu') {{ $product->short_descp_ur }} @else {{ $product->short_descp_en }} @endif</div>
             <div class="cart clearfix animate-effect">
               <div class="action">
                 <ul class="list-unstyled">

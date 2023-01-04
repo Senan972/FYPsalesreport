@@ -54,8 +54,8 @@
 				 <div class="form-group">
 			<h5>Post Title Hin <span class="text-danger">*</span></h5>
 			<div class="controls">
-				<input type="text" name="post_title_hin" class="form-control" required="">
-     @error('post_title_hin') 
+				<input type="text" name="post_title_ur" class="form-control" required="">
+     @error('post_title_ur') 
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
 	 		 </div>
@@ -139,7 +139,7 @@
 	     <div class="form-group">
 			<h5>Post Details Hindi <span class="text-danger">*</span></h5>
 			<div class="controls">
-	<textarea id="editor2" name="post_details_hin" rows="10" cols="80">
+	<textarea id="editor2" name="post_details_ur" rows="10" cols="80">
 		Post Details Hindi
 						</textarea>       
 	 		 </div>

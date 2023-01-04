@@ -48,14 +48,14 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>EasyShop</strong></h2>
+          <h2 style="color: green; font-size: 26px;"><strong>HealthMart</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
-               EasyShop Head Office
-               Email:support@easylearningbd.com <br>
-               Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
+               HealthMart - Online marketplace for health services
+               Email:ssali00972@gmail.com || inaqi69@gmail.com <br>
+               Mob: 03145197911 || 03055777362 <br>
+               COMSATS WAH <br>
               
             </pre>
         </td>
@@ -65,6 +65,7 @@
 
 
   <table width="100%" style="background:white; padding:2px;""></table>
+
   <table width="100%" style="background: #F7F7F7; padding:0 5 0 5px;" class="font">
     <tr>
         <td>
@@ -72,6 +73,7 @@
            <strong>Name:</strong> {{ $order->name }}<br>
            <strong>Email:</strong> {{ $order->email }} <br>
            <strong>Phone:</strong> {{ $order->phone }} <br>
+
            @php
             $div = $order->division->division_name;
             $dis = $order->district->district_name;
@@ -94,27 +96,29 @@
   </table>
   <br/>
 <h3>Products</h3>
+
+
   <table width="100%">
     <thead style="background-color: green; color:#FFFFFF;">
       <tr class="font">
         <th>Image</th>
         <th>Product Name</th>
         <th>Size</th>
-        <th>Color</th>
-        <th>Code</th>
         <th>Quantity</th>
         <th>Unit Price </th>
         <th>Total </th>
       </tr>
     </thead>
     <tbody>
+
      @foreach($orderItem as $item)
       <tr class="font">
         <td align="center">
-            <img src="{{ public_path($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
+            <img src="{{ public_path($item->product->product_thumbnail)  }}" height="60px;" width="60px;" alt="">
         </td>
         <td align="center"> {{ $item->product->product_name_en }}</td>
         <td align="center">
+
           @if($item->size == NULL)
            ----
           @else
@@ -122,8 +126,6 @@
           @endif
             
         </td>
-        <td align="center">{{ $item->color }}</td>
-        <td align="center">{{ $item->product->product_code }}</td>
         <td align="center">{{ $item->qty }}</td>
         <td align="center">${{ $item->price }}</td>
         <td align="center">${{ $item->price * $item->qty }} </td>
@@ -137,7 +139,6 @@
     <tr>
         <td align="right" >
             <h2><span style="color: green;">Subtotal:</span>${{ $order->amount }}</h2>
-            <h2><span style="color: green;">Total:</span> ${{ $order->amount }}</h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>

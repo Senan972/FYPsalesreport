@@ -8,13 +8,7 @@
 <!-- ===== ======== HEADER : END ============================================== -->
 <div class="breadcrumb">
 	<div class="container">
-		<div class="breadcrumb-inner">
-			<ul class="list-inline list-unstyled">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Clothing</a></li>
-				<li class='active'>Floral Print Buttoned</li>
-			</ul>
-		</div><!-- /.breadcrumb-inner -->
+		
 	</div><!-- /.container -->
 </div><!-- /.breadcrumb -->
 <div class="body-content outer-top-xs">
@@ -22,9 +16,6 @@
 		<div class='row single-product'>
 			<div class='col-md-3 sidebar'>
 				<div class="sidebar-module-container">
-				<div class="home-banner outer-top-n">
-{{-- <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> --}}
-</div>		
   
     
     
@@ -333,7 +324,7 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 	</div><!-- /.row -->
 	
 	<div class="action text-right">
-		<button type="submit" class="btn btn-primary btn-upper">SUBMIT REVIEW</button>
+	<button type="submit" class="btn btn-primary btn-upper">SUBMIT REVIEW</button>
 	</div><!-- /.action -->
 </form><!-- /.cnt-form -->
 			</div><!-- /.form-container -->

@@ -45,7 +45,7 @@ Childcategory Products
           <div class="sidebar-filter"> 
             <!-- ============================================== SIDEBAR CATEGORY ============================================== -->
             <div class="sidebar-widget wow fadeInUp">
-              <h3 class="section-title">shop by</h3>
+              <h3 class="section-title">Shop by</h3>
               <div class="widget-header">
                 <h4 class="widget-title">Category</h4>
               </div>
@@ -123,12 +123,11 @@ Childcategory Products
               </div>
               <div class="sidebar-widget-body">
                 <ul class="list">
-                  <li><a href="#">Forever 18</a></li>
-                  <li><a href="#">Nike</a></li>
-                  <li><a href="#">Dolce & Gabbana</a></li>
-                  <li><a href="#">Alluare</a></li>
-                  <li><a href="#">Chanel</a></li>
-                  <li><a href="#">Other Brand</a></li>
+                  <li><a href="#">Medicine</a></li>
+                  <li><a href="#">Tablets</a></li>
+                  <li><a href="#">Injections</a></li>
+                  <li><a href="#">Vitamins</a></li>
+                  <li><a href="#">Baby Care</a></li>
                 </ul>
                 <!--<a href="#" class="lnk btn btn-primary">Show Now</a>--> 
               </div>
@@ -169,7 +168,7 @@ Childcategory Products
 
 
 
-            <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
+          
           </div>
           <!-- /.sidebar-filter --> 
         </div>
@@ -221,7 +220,7 @@ Childcategory Products
                   <li><a data-toggle="tab" href="#list-container"><i class="icon fa fa-th-list"></i>List</a></li>
                 </ul>
               </div>
-              <!-- /.filter-tabs --> 
+              <!-- /.filter-tabs -->
             </div>
             <!-- /.col -->
             <div class="col col-sm-12 col-md-6">

@@ -38,7 +38,7 @@
 	 <tr>
 
 		<td>{{ $item->blog_category_name_en }}</td>
-		 <td>{{ $item->blog_category_name_hin }}</td>
+		 <td>{{ $item->blog_category_name_ur }}</td>
 		<td>
         <a href="{{ route('blog.category.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
  
@@ -94,8 +94,8 @@
 	<div class="form-group">
 		<h5>Blog Category Hindi <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="text" name="blog_category_name_hin" class="form-control" >
-     @error('blog_category_name_hin') 
+	 <input type="text" name="blog_category_name_ur" class="form-control" >
+     @error('blog_category_name_ur') 
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror 
 	  </div>

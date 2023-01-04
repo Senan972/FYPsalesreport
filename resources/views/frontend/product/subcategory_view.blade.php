@@ -12,13 +12,13 @@ Sub Category | HealthMart
     <div class="container">
       <div class="breadcrumb-inner">
         <ul class="list-inline list-unstyled">
-          <li><a href="#">Home</a></li>
+          <li><a href="{{ url('/') }}">Home</a></li>
           @foreach($breadsubcat as $item)
           <li class='active'>{{ $item->category->category_name_en }}</li>
           @endforeach
   
           @foreach($breadsubcat as $item)
-          <li class='active'>{{ $item->subcategory_name_en }}</li>
+            <li class='active'>{{ $item->subcategory_name_en }}</li>
           @endforeach
             {{-- @if(session() -> get('language') == 'urdu') {{ 'مرض قلب' }} @else {{ 'Heart Disease' }} @endif --}}
 
@@ -42,7 +42,7 @@ Sub Category | HealthMart
             <div class="sidebar-filter"> 
               <!-- ============================================== SIDEBAR CATEGORY ============================================== -->
               <div class="sidebar-widget wow fadeInUp">
-                <h3 class="section-title">shop by</h3>
+                <h3 class="section-title">Shop by</h3>
                 <div class="widget-header">
                   <h4 class="widget-title">Category</h4>
                 </div>
@@ -126,10 +126,11 @@ Sub Category | HealthMart
                 </div>
                 <div class="sidebar-widget-body">
                   <ul class="list">
-                    <li><a href="#">Pills</a></li>
-                    <li><a href="#">Capsule</a></li>
-                    <li><a href="#">Injection</a></li>
-                    <li><a href="#">Equipments</a></li>
+                  <li><a href="#">Medicine</a></li>
+                  <li><a href="#">Tablets</a></li>
+                  <li><a href="#">Injections</a></li>
+                  <li><a href="#">Vitamins</a></li>
+                  <li><a href="#">Baby Care</a></li>
                   </ul>
                 </div>
                 <!-- /.sidebar-widget-body --> 
@@ -157,7 +158,7 @@ Sub Category | HealthMart
             @include('frontend.common.testimonials')
               
             
-              {{-- <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div> --}}
+             
             </div>
             <!-- /.sidebar-filter --> 
           </div>

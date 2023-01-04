@@ -27,7 +27,7 @@
 	<img class="img-responsive" src="{{ asset($blogpost->post_image) }}" alt="">
 	
 
-	<h1>@if(session()->get('language') == 'hindi') {{ $blogpost->post_title_hin }} @else {{ $blogpost->post_title_en }} @endif</h1>
+	<h1>@if(session()->get('language') == 'urdu') {{ $blogpost->post_title_urdu }} @else {{ $blogpost->post_title_en }} @endif</h1>
 
 
 
@@ -38,7 +38,7 @@
       <div class="addthis_inline_share_toolbox_8tvu"></div>
             
 
-	<p> @if(session()->get('language') == 'hindi') {!!  $blogpost->post_details_hin  !!} @else {!!  $blogpost->post_details_en  !!} @endif
+	<p> @if(session()->get('language') == 'urdu') {!!  $blogpost->post_details_ur  !!} @else {!!  $blogpost->post_details_en  !!} @endif
 	</p>
 
 
@@ -127,7 +127,7 @@
 
 @foreach($blogcategory as $category)
 	    	 <ul class="list-group">
-  <a href="{{ url('blog/category/post/'.$category->id) }}"><li class="list-group-item">@if(session()->get('language') == 'hindi') {{ $category->blog_category_name_hin }} @else {{ $category->blog_category_name_en }} @endif</li></a>
+  <a href="{{ url('blog/category/post/'.$category->id) }}"><li class="list-group-item">@if(session()->get('language') == 'urdu') {{ $category->blog_category_name_ur }} @else {{ $category->blog_category_name_en }} @endif</li></a>
    
    </ul>
 @endforeach

@@ -50,8 +50,8 @@
 	<div class="form-group">
 		<h5>Blog Category Hindi <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="text" name="blog_category_name_hin" class="form-control" value="{{ $blogcategory->blog_category_name_hin }}"  >
-     @error('blog_category_name_hin') 
+	 <input type="text" name="blog_category_name_ur" class="form-control" value="{{ $blogcategory->blog_category_name_ur }}"  >
+     @error('blog_category_name_ur') 
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror 
 	  </div>
