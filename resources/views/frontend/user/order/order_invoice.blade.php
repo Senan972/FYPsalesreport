@@ -28,12 +28,12 @@
     }
     .authority h5 {
         margin-top: -10px;
-        color: green;
+        color: #0F6CB2;
         /*text-align: center;*/
         margin-left: 35px;
     }
     .thanks p {
-        color: green;;
+        color: #0F6CB2;;
         font-size: 16px;
         font-weight: normal;
         font-family: serif;
@@ -47,8 +47,8 @@
   <table width="100%" style="background: #F7F7F7; padding:0 20px 0 20px;">
     <tr>
         <td valign="top">
-          <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>HealthMart</strong></h2>
+          <img src="backend/images/logo.png" alt="" width="64px"/>
+          <h2 style="color: #0F6CB2; font-size: 26px;"><strong>HealthMart</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
@@ -86,7 +86,7 @@
         </td>
         <td>
           <p class="font">
-            <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_no}}</h3>
+            <h3><span style="color: #0F6CB2;">Invoice:</span> #{{ $order->invoice_no}}</h3>
             Order Date: {{ $order->order_date }} <br>
              Delivery Date: {{ $order->delivered_date }} <br>
             Payment Type : {{ $order->payment_method }} </span>
@@ -99,7 +99,7 @@
 
 
   <table width="100%">
-    <thead style="background-color: green; color:#FFFFFF;">
+    <thead style="background-color: #0F6CB2; color:#FFFFFF;">
       <tr class="font">
         <th>Image</th>
         <th>Product Name</th>
@@ -138,11 +138,11 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span>Rs. {{ $order->amount }}</h2>
-            <h2><span style="color: green;">Shipping:</span>Rs. 50</h2>
-            <h2><span style="color: green;">Grand Total:</span>Rs. {{ $order->amount+50 }}</h2>
+            <h2><span style="color: #0F6CB2;">Subtotal:</span>Rs. {{ $order->amount }}</h2>
+            <h2><span style="color: #0F6CB2;">Shipping:</span>Rs. 50</h2>
+            <h2><span style="color: #0F6CB2;">Grand Total:</span>Rs. {{ $order->amount+50 }}</h2>
 
-            {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
+            {{-- <h2><span style="color: #0F6CB2;">Full Payment PAID</h2> --}}
         </td>
     </tr>
   </table>

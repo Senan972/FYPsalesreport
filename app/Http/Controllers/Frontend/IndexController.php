@@ -207,7 +207,7 @@ public function ChildCatWiseProduct($childcat_id,$slug){
 		$item = $request->search;
 		// echo "$item";
         $categories = Category::orderBy('category_name_en','ASC')->get();
-		$products = Product::where('product_name_en','LIKE',"%$item%")->get();
+		$products = Product::where('status',1)->where('product_name_en','LIKE',"%$item%")->get();
 		return view('frontend.product.search',compact('products','categories'));
 	}
 	///// Advance Search Options 
@@ -217,7 +217,7 @@ public function ChildCatWiseProduct($childcat_id,$slug){
 
 		$item = $request->search;		 
 
-		$products = Product::where('product_name_en','LIKE',"%$item%")->select('product_name_en','product_thumbnail','selling_price','id','product_slug_en')->limit(5)->get();
+		$products = Product::where('status',1)->where('product_name_en','LIKE',"%$item%")->select('product_name_en','product_thumbnail','selling_price','id','product_slug_en')->limit(5)->get();
 		return view('frontend.product.search_product',compact('products'));
 
 

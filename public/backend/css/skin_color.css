@@ -119,7 +119,7 @@ File: scss
 
 /*---Dark skin---*/
 body.dark-skin {
-  background-color: #1a233a;
+  background-color: #022744;
   color: #8a99b5; }
   body.dark-skin .navbar-nav > .user-menu > .dropdown-menu > .user-body {
     border-color: rgba(255, 255, 255, 0.12); }
@@ -142,7 +142,7 @@ body.dark-skin {
     color: #8a99b5;
     background-color: #222e4c; }
   body.dark-skin .main-sidebar .sidebar-footer {
-    background-color: #272e48; }
+    background-color: #08395e; }
   body.dark-skin .user-profile .ulogo h3 {
     color: #bdd1f8; }
 
@@ -153,7 +153,7 @@ body.dark-skin {
   .dark-skin a.bg-light:hover, .dark-skin a.bg-light:focus {
     background-color: #4963a4 !important; }
 .dark-skin .form-control {
-  background-color: #272e48;
+  background-color: #08395e;
   color: #8a99b5; }
 .dark-skin .search-box .app-search .srh-btn {
   background-color: #415892; }
@@ -190,7 +190,7 @@ body.dark-skin {
   border-color: rgba(255, 255, 255, 0.12);
   color: #8a99b5; }
 .dark-skin .btn-default {
-  background-color: #272e48;
+  background-color: #08395e;
   color: #8a99b5;
   border-color: rgba(255, 255, 255, 0.12); }
   .dark-skin .btn-default.hover {
@@ -230,7 +230,7 @@ body.dark-skin {
     .dark-skin .box .box-header .box-subtitle {
       color: #8a99b5; }
   .dark-skin .box .box-footer {
-    background-color: #272e48;
+    background-color: #08395e;
     border-color: rgba(255, 255, 255, 0.12); }
   .dark-skin .box .box-transparent {
     background-color: transparent !important;
@@ -238,7 +238,7 @@ body.dark-skin {
   .dark-skin .box[class*=bg-pale] > .box-header {
     color: #475f7b; }
   .dark-skin .box.box-solid .box-body {
-    background-color: #272e48 !important;
+    background-color: #08395e !important;
     color: #8a99b5; }
   .dark-skin .box.box-solid.box-default > .box-header {
     color: #475f7b;
@@ -301,7 +301,7 @@ body.dark-skin {
 .dark-skin .box-comments .box-comment {
   border-color: rgba(255, 255, 255, 0.12); }
 .dark-skin .card {
-  background-color: #272e48; }
+  background-color: #08395e; }
   .dark-skin .card .card-header {
     background-color: transparent !important;
     border-color: rgba(255, 255, 255, 0.12); }
@@ -326,19 +326,19 @@ body.dark-skin {
 .dark-skin .overlay-wrapper .overlay {
   background: rgba(255, 255, 255, 0.7); }
 .dark-skin .info-box {
-  background-color: #272e48; }
+  background-color: #08395e; }
 .dark-skin .badge-default {
-  background-color: #272e48; }
+  background-color: #08395e; }
 .dark-skin code {
   border-color: rgba(255, 255, 255, 0.12);
-  background-color: #1a233a; }
+  background-color: #022744; }
 .dark-skin .code-preview {
   border-color: rgba(255, 255, 255, 0.12);
-  background-color: #1a233a; }
+  background-color: #022744; }
 .dark-skin .table {
   color: #8a99b5; }
   .dark-skin .table > thead.thead-light th {
-    background-color: #1a233a;
+    background-color: #022744;
     color: #bdd1f8; }
   .dark-skin .table > thead > tr > th {
     border-color: rgba(255, 255, 255, 0.12); }
@@ -384,7 +384,7 @@ body.dark-skin {
   background-color: #32436f; }
 .dark-skin .page-item.disabled .page-link {
   color: #8a99b5;
-  background-color: #1a233a;
+  background-color: #022744;
   border-color: rgba(255, 255, 255, 0.12); }
 .dark-skin .pagination > li > a {
   background-color: #475f7b;
@@ -450,13 +450,13 @@ body.dark-skin {
 .dark-skin .mailbox-attachments li {
   border-color: rgba(255, 255, 255, 0.12); }
 .dark-skin .callout .highlight {
-  background-color: #272e48; }
+  background-color: #08395e; }
 .dark-skin .callout code {
-  background-color: #272e48; }
+  background-color: #08395e; }
 .dark-skin .wysihtml5-toolbar .btn-default {
-  background-color: #272e48; }
+  background-color: #08395e; }
 .dark-skin .wysihtml5-sandbox {
-  background-color: #272e48 !important;
+  background-color: #08395e !important;
   border-color: rgba(255, 255, 255, 0.12) !important; }
   .dark-skin .wysihtml5-sandbox body.placeholder {
     background-color: #32436f !important;
@@ -660,7 +660,7 @@ body.dark-skin {
 .dark-skin .product-list-in-box > .item {
   border-color: rgba(255, 255, 255, 0.12); }
 .dark-skin .list-group-item {
-  background-color: #272e48;
+  background-color: #08395e;
   border: 1px solid rgba(255, 255, 255, 0.12); }
 .dark-skin .list-style-none li.divider {
   background-color: #4963a4; }
@@ -694,11 +694,11 @@ body.dark-skin {
   background-color: #32436f; }
 .dark-skin .main-header .logo-box {
   border-right: 1px solid #464d5c;
-  background: #1a233a !important; }
+  background: #022744 !important; }
 .dark-skin .main-header li.user-header {
   background-color: #ffffff; }
 .dark-skin .main-header .navbar {
-  background: #272e48; }
+  background: #08395e; }
   .dark-skin .main-header .navbar .sidebar-toggle {
     color: #ffffff; }
   .dark-skin .main-header .navbar .res-only-view {
@@ -714,11 +714,11 @@ body.dark-skin {
   .dark-skin .main-header .navbar .nav > .active > a {
     background-color: rgba(26, 35, 58, 0.05); }
 .dark-skin .main-footer {
-  background: #1a233a;
+  background: #022744;
   color: #8a99b5;
   border-color: rgba(255, 255, 255, 0.12); }
 .dark-skin .main-sidebar {
-  background-color: #272e48; }
+  background-color: #08395e; }
 .dark-skin .left-side {
   box-shadow: 0 10px 15px -5px rgba(103, 133, 167, 0.07);
   background-color: rgba(73, 99, 164, 0.75); }
@@ -727,7 +727,7 @@ body.dark-skin {
   .dark-skin .user-panel > .info > a {
     color: #ffffff; }
 .dark-skin .sidebar-menu {
-  background: #1a233a; }
+  background: #022744; }
   .dark-skin .sidebar-menu > li.treeview.menu-open {
     background-color: rgba(26, 35, 58, 0) !important; }
     .dark-skin .sidebar-menu > li.treeview.menu-open > a {
@@ -799,14 +799,14 @@ body.dark-skin {
     border: 1px solid rgba(26, 35, 58, 0.59);
     color: #d5dfea; }
 .dark-skin .main-footer {
-  background-color: #1a233a;
+  background-color: #022744;
   color: #ffffff; }
 .dark-skin .nav-dot-separated .nav-item::after {
   color: #8a99b5; }
 .dark-skin .nav-dot-separated > .nav-link::after {
   color: #8a99b5; }
 .dark-skin .box {
-  background-color: #272e48;
+  background-color: #08395e;
   box-shadow: -7.829px 11.607px 21px 0px rgba(25, 42, 70, 0.13); }
   .dark-skin .box.box-solid .box-title {
     color: #ffffff; }

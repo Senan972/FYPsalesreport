@@ -28,12 +28,12 @@
     }
     .authority h5 {
         margin-top: -10px;
-        color: green;
+        color: #0F6CB2;
         /*text-align: center;*/
         margin-left: 35px;
     }
     .thanks p {
-        color: green;;
+        color: #0F6CB2;
         font-size: 16px;
         font-weight: normal;
         font-family: serif;
@@ -48,7 +48,7 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>HealthMart</strong></h2>
+          <h2 style="color: #0F6CB2; font-size: 26px;"><strong>HealthMart</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
@@ -85,7 +85,7 @@
         </td>
         <td>
           <p class="font">
-            <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_no}}</h3>
+            <h3><span style="color: #0F6CB2;">Invoice:</span> #{{ $order->invoice_no}}</h3>
             Order Date: {{ $order->order_date }} <br>
              Delivery Date: {{ $order->delivered_date }} <br>
             Payment Type : {{ $order->payment_method }} </span>
@@ -96,7 +96,7 @@
   <br/>
 <h3>Products</h3>
   <table width="100%">
-    <thead style="background-color: green; color:#FFFFFF;">
+    <thead style="background-color: #0F6CB2; color:#FFFFFF;">
       <tr class="font">
         <th>Image</th>
         <th>Product Name</th>
@@ -137,9 +137,9 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span>${{ $order->amount }}</h2>
-            <h2><span style="color: green;">Total:</span> ${{ $order->amount }}</h2>
-            {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
+            <h2><span style="color: #0F6CB2;">Subtotal:</span>${{ $order->amount }}</h2>
+            <h2><span style="color: #0F6CB2;">Total:</span> ${{ $order->amount }}</h2>
+            {{-- <h2><span style="color: #0F6CB2;">Full Payment PAID</h2> --}}
         </td>
     </tr>
   </table>

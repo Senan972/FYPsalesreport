@@ -70,7 +70,7 @@
 					<div class="box overflow-hidden pull-up">
 						<div class="box-body">							
 							<div class="icon bg-danger-light rounded w-60 h-60">
-								<i class="text-danger mr-0 font-size-24 mdi mdi-phone-incoming"></i>
+								<a href="{{ url('orders/pending/orders') }}"><i class="text-danger mr-0 font-size-24 mdi mdi-phone-incoming"></i></a>
 							</div>
 							<div>
 							<p class="text-mute mt-20 mb-0 font-size-16">Pending Orders </p>
