@@ -6,10 +6,7 @@
 		<div class="row">
 			 @include('frontend.common.user_sidebar')
 
-       <div class="col-md-2">
-       </div>
-
-       <div class="col-md-8">
+       <div class="col-md-10">
 
         <div class="table-responsive">
           <table class="table">
@@ -51,7 +48,7 @@
                 </td>
 
                 <td class="col-md-3">
-                  <label for=""> ${{ $order->amount }}</label>
+                  <label for=""> Rs. {{ $order->amount }}</label>
                 </td>
 
 

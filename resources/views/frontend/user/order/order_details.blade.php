@@ -96,7 +96,7 @@
 
              <tr>
               <th> Order Total : </th>
-               <th>{{ $order->amount }} </th>
+               <th>Rs. {{ $order->amount+50 }} </th>
             </tr>
 
             <tr>
@@ -140,11 +140,6 @@
                   <label for=""> Product Code</label>
                 </td>
 
-
-                <td class="col-md-2">
-                  <label for=""> Color </label>
-                </td>
-
                  <td class="col-md-2">
                   <label for=""> Size </label>
                 </td>
@@ -176,10 +171,6 @@
                 </td>
 
                 <td class="col-md-2">
-                  <label for=""> {{ $item->color }}</label>
-                </td>
-
-                <td class="col-md-2">
                   <label for=""> {{ $item->size }}</label>
                 </td>
 
@@ -188,7 +179,7 @@
                 </td>
 
           <td class="col-md-2">
-                  <label for=""> ${{ $item->price }}  ( $ {{ $item->price * $item->qty}} ) </label>
+                  <label for=""> Rs. {{ $item->price }}  ( Rs. {{ $item->price * $item->qty}} ) </label>
                 </td>
 
               </tr>

@@ -9,5 +9,6 @@
 		  </li>
 		</ul>
     </div>
-	  &copy; 2020 <a href="#">Health Mart</a>. All Rights Reserved.
+	&copy; 2020 <a href="https://healthmart.munyyb.com">Health Mart</a>. All Rights Reserved.
+
   </footer>

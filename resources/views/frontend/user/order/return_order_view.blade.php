@@ -6,10 +6,8 @@
 		<div class="row">
 			 @include('frontend.common.user_sidebar')
 
-       <div class="col-md-2">
-       </div>
 
-       <div class="col-md-8">
+       <div class="col-md-10">
 
         <div class="table-responsive">
           <table class="table">
@@ -51,7 +49,7 @@
                 </td>
 
                 <td class="col-md-3">
-                  <label for=""> ${{ $order->amount }}</label>
+                  <label for=""> Rs. {{ $order->amount }}</label>
                 </td>
 
 
@@ -73,7 +71,7 @@
                   @if($order->return_order == 0) 
  <span class="badge badge-pill badge-warning" style="background: #418DB9;"> No Return Request </span>
  @elseif($order->return_order == 1)
- <span class="badge badge-pill badge-warning" style="background: #800000;"> Pedding </span>
+ <span class="badge badge-pill badge-warning" style="background: #800000;"> Pending </span>
  <span class="badge badge-pill badge-warning" style="background:red;">Return Requested </span>
 
  @elseif($order->return_order == 2)

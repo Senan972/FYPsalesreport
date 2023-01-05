@@ -127,8 +127,8 @@
             
         </td>
         <td align="center">{{ $item->qty }}</td>
-        <td align="center">${{ $item->price }}</td>
-        <td align="center">${{ $item->price * $item->qty }} </td>
+        <td align="center">Rs. {{ $item->price }}</td>
+        <td align="center">Rs. {{ $item->price * $item->qty }} </td>
       </tr>
       @endforeach
       
@@ -138,13 +138,16 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span>${{ $order->amount }}</h2>
+            <h2><span style="color: green;">Subtotal:</span>Rs. {{ $order->amount }}</h2>
+            <h2><span style="color: green;">Shipping:</span>Rs. 50</h2>
+            <h2><span style="color: green;">Grand Total:</span>Rs. {{ $order->amount+50 }}</h2>
+
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>
   </table>
   <div class="thanks mt-3">
-    <p>Thanks For Buying Products..!!</p>
+    <p>Thank you for using Healthmart. We hope you like our service.</p>
   </div>
   <div class="authority float-right mt-5">
       <p>-----------------------------------</p>

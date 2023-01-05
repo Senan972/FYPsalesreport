@@ -15,19 +15,43 @@
                         <form method="post" action="{{ route('user.password.update') }}">
                             @csrf
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Current Password <span></span></label>
+                                <label class="info-title" for="exampleInputEmail1">
+                                    @if (session()->get('language') == 'urdu')
+                {{ 'موجودہ خفیہ پاسورڈ' }}
+            @else
+                {{ 'Current Password' }}
+            @endif
+             <span></span></label>
                                 <input type="password" id="current_password" name="oldpassword" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">New Password <span></span></label>
+                                <label class="info-title" for="exampleInputEmail1"> 
+                                    @if (session()->get('language') == 'urdu')
+                {{ 'نیا پاس ورڈ' }}
+            @else
+                {{ 'New Password' }}
+            @endif
+            <span></span></label>
                                 <input type="password" id="password" name="password" class="form-control"">
                             </div>
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Confirm Password <span></span></label>
+                                <label class="info-title" for="exampleInputEmail1"> 
+                                    @if (session()->get('language') == 'urdu')
+                {{ 'پاس ورڈ کی تصدیق کریں' }}
+            @else
+                {{ 'Confirm Password' }}
+            @endif
+            <span></span></label>
                                 <input type="password" id="password_confirmation" name="password_confirmation" class="form-control">
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-danger">Update</button>
+                                <button class="btn btn-danger">
+                                    @if (session()->get('language') == 'urdu')
+                                            {{ 'اپڈیٹ' }}
+                                        @else
+                                            {{ 'Update' }}
+                                        @endif
+                                </button>
                             </div>
                         </form>
                     </div>
